@@ -1,0 +1,45 @@
+# Basic
+title: YEQING.RUN
+subtitle: 井与陆地，海和岛屿。
+description: Android Developer.
+creator: <a href="http://onev.cat">@onevcat</a>
+
+url: "https://amazingchen.github.io/#blog"
+
+permalink: /:year/:month/:title/
+
+# Format
+highlighter: rouge
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+# cover_color: red
+
+# The blog button should not be removed.
+blog_button:
+    title: Blog
+    description: Visit blog
+
+# Navigation buttons in the front page.
+nav:
+    - {title: Projects, description: My Projects, url: 'https://github.com/AmazingChen/VHabit'}
+    # - {title: Another Button, description: A button, url: 'http://example.com'}
+
+# Pagination
+plugins: [jekyll-paginate]
+paginate: 10
+paginate_path: "page/:num/"
+
+# Comment
+comment:
+    disqus: vno-jekyll
+    # duoshuo: 
+    
+# Social
+social:
+    github: AmazingChen
+    mail: shixianjingla@gmail.com
+
+# Google Analytics
+ga:
+    # id: your_ga_id
+    # host: your_host
