@@ -2,9 +2,9 @@
 title: YEQING.RUN
 subtitle: 井与陆地，海和岛屿。
 description: Android Developer.
-creator: <a href="http://onev.cat">@onevcat</a>
+creator: <a href="http://yeqing.run">@yeiqng.run</a>
 
-url: "https://yeqing112.github.io/#blog"
+url: "https://yeqing112.github.io/"
 
 permalink: /:year/:month/:title/
 
@@ -21,7 +21,7 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'https://github.com/AmazingChen/VHabit'}
+    - {title: Projects, description: My Projects, url: 'https://github.com/yeqing112/'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
@@ -36,8 +36,8 @@ comment:
     
 # Social
 social:
-    github: AmazingChen
-    mail: shixianjingla@gmail.com
+    github: yeqing112
+    mail: 51025826@qq.com
 
 # Google Analytics
 ga:
