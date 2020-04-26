@@ -1,7 +1,7 @@
 ---
-layout:post
-title:欢迎使用Markdown编辑器
-category:默认分类
+layout: post
+title: 欢迎使用Markdown编辑器
+category: 默认分类
 ---
 ##欢迎使用Markdown编辑器
 
