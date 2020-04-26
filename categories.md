@@ -1,21 +1,28 @@
 ---
-title: 分类
 layout: page
+title: Categories
 ---
-<div id='cat_cloud'>
-{% for cat in site.categories %}
-<a href="#{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}">{{ cat[0] }} ({{ cat[1].size }})</a>
-{% endfor %}
-</div>
 
-<ul class="listing">
-{% for cat in site.categories %}
-  <li class="listing-seperator" id="{{ cat[0] }}">{{ cat[0] }}</li>
-{% for post in cat[1] %}
-  <li class="listing-item">
-  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-  <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  </li>
-{% endfor %}
-{% endfor %}
-</ul>
+<div class="tags-expo">
+  <div class="tags-expo-list">
+    {% for tag in site.categories %}
+    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+  <hr/>
+  <div class="tags-expo-section">
+    {% for tag in site.categories %}
+    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+    <ul class="tags-expo-posts">
+      {% for post in tag[1] %}
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+      <li>
+        {{ post.title }}
+      <small class="post-date">{{ post.date | date_to_string }}</small>
+      </li>
+      </a>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</div>
