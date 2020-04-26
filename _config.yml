@@ -53,4 +53,4 @@ ga:
 collections:
  category:
   output: true
-  permalink: /:collection/:title
+  permalink: /:category/:title
