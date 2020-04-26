@@ -16,16 +16,17 @@ highlighter: rouge
 
 # The blog button should not be removed.
 blog_button:
-    title: Blog
-    description: Visit blog
+    title: 首页
+    description: 首页
 
 # Navigation buttons in the front page.
 nav:
-    - {title: 野生技术, description: 我自己写的一些野生技术文章，也有转载大咖的文章, url: 'https://github.com/yeqing112/'}
-    - {title: 界面设计, description: 界面设计, url: 'https://github.com/yeqing112/'}
-    - {title: 二维动效, description: 二维动效, url: 'https://github.com/yeqing112/'}
-    - {title: 三维设计, description: 三维设计, url: 'https://github.com/yeqing112/'}
-    - {title: Projects, description: My Projects, url: 'https://github.com/yeqing112/'}
+    - {title: 技术, description: 我自己写的一些野生技术文章，也有转载大咖的文章, url: 'https://github.com/yeqing112/'}
+    - {title: 界面, description: 界面设计, url: 'https://github.com/yeqing112/'}
+    - {title: 动效, description: 二维动效, url: 'https://github.com/yeqing112/'}
+    - {title: 三维, description: 三维设计, url: 'https://github.com/yeqing112/'}
+    - {title: 产品, description:产品设计与运营, url: 'https://github.com/yeqing112/'}
+    - {title: 资源, description:分享好资源, url: 'https://github.com/yeqing112/'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
 # Pagination
