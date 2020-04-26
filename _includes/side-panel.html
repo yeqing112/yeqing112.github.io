@@ -25,13 +25,10 @@
                 {% for item in site.nav %}
                   <li class="navigation__item"><a href="{{item.url}}" target="_blank" title="{{item.description}}">{{item.title}}</a></li>
                 {% endfor %}
-				
-<h1>随笔分类</h1>
-{% for category in site.categories %}
-<ul>
-    <li><a href="{{ site.baseurl}}/category/{{ category.first }}/">{{category.first}}（{{category.last.size}}）</a></li>
-</ul>
-{% endfor %}
+
+				{% for category in site.categories %}
+				  <li class="navigation__item"><a href="{{ site.baseurl}}/category/{{ category.first }}/">{{category.first}}（{{category.last.size}}）</a></li>
+				{% endfor %}
 				
               </ul>
             </nav>
