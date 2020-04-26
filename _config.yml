@@ -48,3 +48,9 @@ social:
 ga:
     # id: your_ga_id
     # host: your_host
+    
+# Collections
+collections:
+ category:
+  output: true
+  permalink: /:collection/:title
