@@ -65,6 +65,19 @@ tags:
 
 > 引用文本
 
+```bash
+FROM alpine:3.8
+ENV TIME_ZONE Asiz/Shanghai
+RUN sed -i 's~dl-cdn.alpinelinux.org~mirrors.aliyun.com~' /etc/apk/repositories \
+    && apk update \
+    && apk add nginx \
+    && mkdir -p /run/nginx \
+    && mkdir -p /var/www/html/ \
+    && echo "这是版本1" > /var/www/html/index.html
+WORKDIR /var/www/html/
+CMD ["more" ,"index.html"]
+```
+
 H~2~O is是液体。
 
 2^10^ 运算结果是 1024.
