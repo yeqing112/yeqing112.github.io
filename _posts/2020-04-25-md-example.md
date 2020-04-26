@@ -1,8 +1,17 @@
 ---
 layout: post
 title: 欢迎使用Markdown编辑器
-category: 默认分类
-tags: 默认标签
+date: 2020-04-25 01:13
+author: yeqing
+comments: true
+categories: 
+- 分类1
+- 分类2
+- 分类3
+tags: 
+- 标签1
+- 标签2
+- 标签2
 ---
 ##欢迎使用Markdown编辑器
 
