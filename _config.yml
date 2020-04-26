@@ -2,11 +2,11 @@
 title: YEQING.RUN
 subtitle: 井与陆地，海和岛屿。
 description: Android Developer.
-creator: <a href="https://yeqing.run">@yeiqng.run</a>
+creator: <a href="https://yeqing.run">me@yeiqng.run</a>
 
 url: "https://yeqing.run"
 
-permalink: /:year:month/:title.html
+permalink: /:year:month/:title/
 
 # Format
 highlighter: rouge
