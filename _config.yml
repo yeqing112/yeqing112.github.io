@@ -6,7 +6,7 @@ creator: <a href="https://yeqing.run">@yeiqng.run</a>
 
 url: "https://yeqing.run"
 
-permalink: /:year/:month/:title/
+permalink: /:year:month:data/:title/
 
 # Format
 highlighter: rouge
@@ -48,12 +48,3 @@ social:
 ga:
     # id: your_ga_id
     # host: your_host
-    
-# Collections
-collections:
- category:
-  output: true
-  permalink: /:collection/:title
-  
-  
-include: ["_pages"]
