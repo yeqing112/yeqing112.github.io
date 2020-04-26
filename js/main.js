@@ -22,10 +22,6 @@ $(document).ready(function() {
   if (window.location.pathname.substring(0, 5) == "/tags/") {
     $('.panel-cover').addClass('panel-cover--collapsed');
   }
-  
-  if (window.location.pathname.substring(0, 5) == "/categories/") {
-    $('.panel-cover').addClass('panel-cover--collapsed');
-  }
 
   $('.btn-mobile-menu__icon').click(function() {
     if ($('.navigation-wrapper').css('display') == "block") {
