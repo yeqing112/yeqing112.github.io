@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Categories
+layout: categories
+title: CATEGORIES
 ---
 
 <div class="tags-expo">
