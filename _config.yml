@@ -6,7 +6,7 @@ creator: <a href="https://yeqing.run">@yeiqng.run</a>
 
 url: "https://yeqing.run"
 
-permalink: /:year-:month/:title/
+permalink: /:year:month:day/:title/
 
 # Format
 highlighter: rouge
