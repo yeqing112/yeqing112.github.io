@@ -1,5 +1,5 @@
 ---
-title: tag cloud
+title: 标签
 layout: page
 ---
 
