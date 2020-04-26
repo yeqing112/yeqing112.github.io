@@ -21,6 +21,10 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
+    - {title: 野生技术, description: 我自己写的一些野生技术文章，也有转载大咖的文章, url: 'https://github.com/yeqing112/'}
+    - {title: 界面设计, description: 界面设计, url: 'https://github.com/yeqing112/'}
+    - {title: 二维动效, description: 二维动效, url: 'https://github.com/yeqing112/'}
+    - {title: 三维设计, description: 三维设计, url: 'https://github.com/yeqing112/'}
     - {title: Projects, description: My Projects, url: 'https://github.com/yeqing112/'}
     # - {title: Another Button, description: A button, url: 'http://example.com'}
 
