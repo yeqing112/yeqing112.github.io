@@ -19,7 +19,7 @@ $(document).ready(function() {
     $('.main-post-list').removeClass('hidden');
   }
 
-  if (window.location.pathname.substring(0, 5) == "/tag/") {
+  if (window.location.pathname.substring(0, 5) == "/tags/") {
     $('.panel-cover').addClass('panel-cover--collapsed');
   }
 
