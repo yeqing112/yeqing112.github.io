@@ -54,3 +54,6 @@ collections:
  category:
   output: true
   permalink: /:collection/:title
+  
+  
+include: ["_pages"]
