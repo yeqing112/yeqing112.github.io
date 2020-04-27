@@ -8,6 +8,6 @@ document.querySelector('.page-search-input').addEventListener('keyup',function(e
         }
     }
     if(e.keyCode == 13){
-        window.open('https://www.google.com/#q=site:blog.fooleap.org+'+this.value);
+        window.open('https://www.google.com/#q=site:yeqing.run+'+this.value);
     }
 })
