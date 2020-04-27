@@ -5,19 +5,7 @@ layout: default
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226; <span class="post-meta__categories categories">{{page.categories | join:' '}}</span> &#8226; <span class="post-meta__tags tags">{{page.tags | join:' '}}</span>|||||  
-	  
-	  <div class="tags">
-      {% assign sortedTags = page.tags | sort %}
-      <small>Tags: </small>
-      {% for tag in sortedTags %}
-        <span class="tag">
-          <small> <a href="{{ site.baseurl }}/tags/#{{ tag }}"> #{{ tag }}</a></small>
-        </span> 
-      {% endfor %}
-      <br>
-    </div>
-	
+      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> | <span class="post-meta__categories categories">{{page.categories | join:' '}}</span> | {% assign sortedTags = page.tags | sort %}<small>Tags: </small>{% for tag in sortedTags %}<span class="post-meta__categories categories"><small> <a href="{{ site.baseurl }}/tags/#{{ tag }}"> #{{ tag }}</a></small></span>{% endfor %}
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
