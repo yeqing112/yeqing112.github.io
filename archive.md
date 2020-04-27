@@ -2,7 +2,6 @@
 layout: page
 title: 文章归档
 ---
-<script type="text/javascript" src="/js/search.js"></script>
 <input class="page-search-input" type="text" placeholder="搜索" />
 {% for post in site.posts %}
 {% unless post %}
@@ -16,3 +15,4 @@ title: 文章归档
 {% endunless %}
 * {{ post.date | date: "%m-%d" }} &raquo; [{{ post.title }}]({{ post.url }} "{{ post.title }}"){:.archive-item-link}
 {% endfor %}
+<script type="text/javascript" src="/js/search.js"></script>
