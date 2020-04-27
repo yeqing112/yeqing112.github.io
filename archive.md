@@ -2,6 +2,7 @@
 layout: page
 title: 文章归档
 ---
+<script type="text/javascript" src="/js/search.js"></script>
 <input class="page-search-input" type="text" placeholder="搜索" />
 {% for post in site.posts %}
 {% unless post %}
