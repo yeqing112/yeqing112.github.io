@@ -1,6 +1,6 @@
 ---
 layout : page
-permalink: /search.html
+permalink: /search/
 title : 搜索
 ---
 
