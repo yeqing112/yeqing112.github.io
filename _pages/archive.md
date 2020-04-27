@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 文章归档
+permalink: /archive/
 ---
 <input class="page-search-input" type="text" placeholder="搜索" />
 {% for post in site.posts %}
