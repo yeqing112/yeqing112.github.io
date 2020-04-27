@@ -51,16 +51,4 @@ $(document).ready(function() {
   });
 });
 
-document.querySelector('.page-search-input').addEventListener('keyup',function(e){
-    var archive = document.getElementsByClassName('archive-item-link');
-    for (var i = 0; i < archive.length; i++){
-        if( archive[i].title.toLowerCase().indexOf(this.value.toLowerCase()) > -1 ) {
-            archive[i].closest('li').style.display = '';
-        } else {
-            archive[i].closest('li').style.display = 'none';
-        }
-    }
-    if(e.keyCode == 13){
-        window.open('https://www.google.com/#q=site:blog.fooleap.org+'+this.value);
-    }
-})
+if ("/archive.html" == page.url && document.querySelector(".page-search-input").addEventListener("keyup", function (t) { for (var e = document.getElementsByClassName("archive-item-link"), r = 0; r < e.length; r++)e[r].title.toLowerCase().indexOf(this.value.toLowerCase()) > -1 ? e[r].closest("li").style.display = "block" : e[r].closest("li").style.display = "none"; 13 == t.keyCode && (location.href = "/search.html?keyword=" + this.value) }), "/search.html" == page.url) { var A, q = u("keyword"), E = document.querySelector(".search-input"), I = document.querySelector(".search-result"), j = new XMLHttpRequest; function D(t) { I.innerHTML = ""; var e = "搜索：" + t + " | " + site.title, r = "/search.html?keyword=" + t, n = (I.length, "");
