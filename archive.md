@@ -2,7 +2,7 @@
 layout: page
 title: 文章归档
 ---
-
+<input class="page-search-input" type="text" placeholder="搜索" />
 {% for post in site.posts %}
 {% unless post %}
 {% else %}
