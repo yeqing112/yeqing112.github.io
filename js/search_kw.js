@@ -369,7 +369,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
       document.querySelector('.post-list').innerHTML = html;
       document.querySelector('.pagination').innerHTML = pagination;
       timeAgo();
-      disq.count();
       var link = document.getElementsByClassName('pagination-item-link');
       for (var i = 0; i < link.length; i++) {
         link[i].addEventListener('click', function (e) {
