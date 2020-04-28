@@ -1,4 +1,3 @@
-if (page.url == '/search/') {
     var keyword = getQuery('keyword');
     var searchData;
     var input = document.querySelector('.search-input');
@@ -58,5 +57,3 @@ if (page.url == '/search/') {
         _hmt.push(['_trackPageview', url]);
       }
     }
-
-  }
