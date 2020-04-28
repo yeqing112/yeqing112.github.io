@@ -67,10 +67,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 
 
-  // 参考资料、站外链接
-  if (document.querySelectorAll('h2')[document.querySelectorAll('h2').length - 1].innerHTML === '参考资料') {
-    document.querySelectorAll('h2')[document.querySelectorAll('h2').length - 1].insertAdjacentHTML('afterend', '<ol id="refs"></ol>');
-  }
   var links = document.getElementsByTagName('a');
   var noteArr = [];
   for (var i = 0; i < links.length; i++) {
