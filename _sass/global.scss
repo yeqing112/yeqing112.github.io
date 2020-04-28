@@ -375,3 +375,45 @@ hr {
   height: 24px;
   fill: #626262;
 }
+.search .search-result-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 25px 0;
+  height: 70px;
+}
+.search .search-result-item .search-result-thumb {
+  width: 70px;
+  height: 70px;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: #fff;
+}
+.search .search-result-content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 10px;
+}
+.search .search-result-content .search-result-header {
+  line-height: 26px;
+  height: 26px;
+}
+.search .search-result-content .search-result-header .search-result-title {
+  font-size: 14px;
+}
+.search .search-result-content .search-result-desc {
+    font-size: 13px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
