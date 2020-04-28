@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     function search(keyword) {
       result.innerHTML = '';
       var title = '搜索：' + keyword + ' | ' + site.title;
-      var url = '/search.html?keyword=' + keyword;
+      var url = '/search/?keyword=' + keyword;
       var total = result.length;
       var html = '';
       searchData.forEach(function (item) {
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     xhrPosts.send(null);
     function tags(keyword) {
       var title = '标签：' + keyword + ' | ' + site.title;
-      var url = '/tags.html?keyword=' + keyword;
+      var url = '/tags/?keyword=' + keyword;
       var tagsTable = document.getElementById('tags-table');
       tagsTable.style.display = 'table';
       tagsTable.querySelector('thead tr').innerHTML = '<th colspan=2>以下是标签含有“' + keyword + '”的所有文章</th>';
