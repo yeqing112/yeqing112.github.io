@@ -4,13 +4,6 @@ window.addEventListener('beforeunload', function (event) {
 
 document.addEventListener('DOMContentLoaded', function (event) {
 
-  if (browser.mobile) {
-    var jdlink = document.querySelector('.jd-ads-link')
-    if (jdlink) {
-      jdlink.href = jdlink.dataset.mobileUrl
-    }
-  }
-
   var disq = new iDisqus('comment', {
     forum: site.forum,
     site: site.home,
