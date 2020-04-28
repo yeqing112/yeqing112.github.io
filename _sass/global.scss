@@ -406,14 +406,18 @@ hr {
   height: 26px;
 }
 .search .search-result-content .search-result-header .search-result-title {
-  font-size: 14px;
+  font-size: .9em;
 }
 .search .search-result-content .search-result-desc {
-    font-size: 13px;
+    font-size: .8em;
     line-height: 22px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+.search-result-content .search-result-highlight {
+    display: inline-block;
+    background-color: rgba(255,255,0,0.7);
 }
