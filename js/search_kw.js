@@ -1,3 +1,5 @@
+var iDisqus = require('disqus-php-api');
+
 window.addEventListener('beforeunload', function (event) {
   document.getElementById('menu').checked = false;
 });
