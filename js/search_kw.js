@@ -33,5 +33,3 @@ function search(keyword) {
         _hmt.push(['_trackPageview', url]);
       }
     }
-
-  }
