@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 permalink: /ui/
 title: 技术
 ---
