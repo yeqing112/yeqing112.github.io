@@ -232,6 +232,110 @@ document.addEventListener('DOMContentLoaded', function (event) {
       }, false);
     }
   }
+  
+  if (page.url == '/ui/' || page.url == '/life.html' || page.url == '/album.html') {
+    var pageNum = !!getQuery('page') ? parseInt(getQuery('page')) : 1;
+    var postData, posts = [];
+    var xhrPosts = new XMLHttpRequest();
+    var category = page.url.slice(1, -5);
+    xhrPosts.open('GET', '/posts.json', true);
+    xhrPosts.onreadystatechange = function () {
+      if (xhrPosts.readyState == 4 && xhrPosts.status == 200) {
+        postData = JSON.parse(xhrPosts.responseText);
+        postData.forEach(function (item) {
+          if (item.category == category) {
+            posts.push(item);
+          }
+        })
+        turn(pageNum);
+      }
+    }
+    xhrPosts.send(null);
+
+    function turn(pageNum) {
+      var cat = '';
+      var postClass = '';
+      var pageSize = 10;
+      switch (page.url) {
+        case '/ui/':
+          cat = '技术';
+          postClass = 'post-tech';
+          break;
+        case '/life.html':
+          cat = '生活';
+          pageSize = 12;
+          postClass = 'post-life';
+          break;
+        case '/album.html':
+          cat = '相册';
+          postClass = 'post-album';
+          break;
+      }
+      var title = pageNum == 1 ? cat + ' | ' + site.title : cat + '：第' + pageNum + '页 | ' + site.title;
+      var url = pageNum == 1 ? page.url : page.url + '?page=' + pageNum;
+      var html = '';
+      var total = posts.length;
+      var first = (pageNum - 1) * pageSize;
+      var last = total > pageNum * pageSize ? pageNum * pageSize : total;
+      if (page.url == '/life.html') {
+        for (var i = first; i < last; i++) {
+          var item = posts[i];
+          html += '<article class="post-item">' +
+            '    <i class="post-item-thumb" data-src="' + item.image + '" style="background-image:url(' + (item.image.indexOf('svg') > -1 ? item.image : item.image + '?imageView2/1/w/400/h/266') + ')"></i>' +
+            '    <section class="post-item-summary">' +
+            '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + (item.images > 30 && item.category == 'life' ? '[' + item.images + 'P]' : '') + '</a></h3>' +
+            '    </section>' +
+            '    <section class="post-item-footer"><time class="post-item-date timeago" datetime="' + item.date + '"></time><a class="post-item-cmt" title="查看评论" href="' + item.url + '#comment"><span data-disqus-url="' + item.url + '"></span><span>条评论</span></a></section>' +
+            '</article>';
+        }
+      } else {
+        for (var i = first; i < last; i++) {
+          var item = posts[i];
+          html += '<article class="post-item">' +
+            '    <i class="post-item-thumb" data-src="' + item.thumb + '" style="background-image:url(' + item.thumb + ')"></i>' +
+            '    <section class="post-item-summary">' +
+            '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + (item.images > 30 && item.category == 'life' ? '[' + item.images + 'P]' : '') + '</a></h3>' +
+            '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
+            '    </section>' +
+            '    <a class="post-item-comment" title="查看评论" data-disqus-url="' + item.url + '" href="' + item.url + '#comment"></a>' +
+            '</article>';
+        }
+      }
+
+      var totalPage = Math.ceil(total / pageSize);
+      var prev = pageNum > 1 ? pageNum - 1 : 0;
+      var next = pageNum < totalPage ? pageNum + 1 : 0;
+      var prevLink = !!prev ? '<a class="pagination-item-link" href="' + page.url + '?page=' + prev + '" data-page="' + prev + '">较新文章 &raquo;</a>' : '';
+      var nextLink = !!next ? '<a class="pagination-item-link" href="' + page.url + '?page=' + next + '" data-page="' + next + '">&laquo; 较旧文章</a>' : '';
+      var pagination = '<ul class="pagination-list">' +
+        '<li class="pagination-item">' + nextLink + '</li>' +
+        '<li class="pagination-item">' + pageNum + ' / ' + totalPage + '</li>' +
+        '<li class="pagination-item">' + prevLink + '</li>' +
+        '</ul>';
+
+      document.querySelector('.post-list').classList.add(postClass);
+      document.querySelector('.post-list').innerHTML = html;
+      document.querySelector('.pagination').innerHTML = pagination;
+      timeAgo();
+      disq.count();
+      var link = document.getElementsByClassName('pagination-item-link');
+      for (var i = 0; i < link.length; i++) {
+        link[i].addEventListener('click', function (e) {
+          var pageNum = parseInt(e.currentTarget.dataset.page);
+          turn(pageNum);
+          e.preventDefault();
+        })
+      }
+      document.title = title;
+      history.replaceState({
+        "title": title,
+        "url": url
+      }, title, url);
+      if (site.home === location.origin && window.parent == window) {
+        _hmt.push(['_trackPageview', url]);
+      }
+    }
+  }
 
   var appendZero = function (num) {
     if (!num) {
