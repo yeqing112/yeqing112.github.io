@@ -4,9 +4,6 @@ window.addEventListener('beforeunload', function (event) {
 
 document.addEventListener('DOMContentLoaded', function (event) {
 
-  disq.count();
-  timeAgo();
-
   var curYear = new Date().getFullYear();
   var startYear = Date.parse('01 Jan '+curYear+' 00:00:00');
   var endYear = Date.parse('31 Dec '+curYear+' 23:59:59');
