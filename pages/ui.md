@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /ui/
-title: 技术
+title: 界面设计
 ---
 
 <section class="post-list"></section>
