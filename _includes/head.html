@@ -25,5 +25,34 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
-  
+
+  <script>
+    var ua = navigator.userAgent,
+      head = document.head,
+      site = {
+        home: '{{ site.home }}',
+        api: '{{ site.api }}',
+        img: '{{ site.IMG_PATH }}',
+        tongji: '{{ site.tongji }}',
+        analytics: '{{ site.analytics }}',
+        forum: '{{ site.nickname }}',
+        title: "{{ site.title }}"
+      },
+      page = { 
+        layout: '{{ page.layout }}',
+        title: '{{ page.title }}',
+        url: location.pathname,
+        desc: '{{ desc }}',
+        id: '{{ page.id }}',
+        category: '{{ page.category }}',
+        tags: ['{{ page.tags | join: "','" }}']
+      },
+      browser = { 
+        macos: /Mac/i.test(navigator.platform),
+        windows: /Win/i.test(navigator.platform),
+        mobile: /AppleWebKit.*Mobile.*/i.test(ua),
+        wechat: /MicroMessenger/i.test(ua),
+      };
+  </script>
+
 </head>
