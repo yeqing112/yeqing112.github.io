@@ -5,23 +5,6 @@ window.addEventListener('beforeunload', function (event) {
 });
 
 document.addEventListener('DOMContentLoaded', function (event) {
-	
-  var disq = new iDisqus('comment', {
-    forum: site.forum,
-    site: site.home,
-    api: site.api + '/disqus',
-    title: page.title,
-    url: page.url,
-    mode: 2,
-    timeout: 3000,
-    slug: page.url.slice(1).split('.')[0],
-    init: true,
-    toggle: 'comment-toggle',
-    sort: 'newest',
-    emoji_path: site.api + '/emoji/unicode/',
-  });
-
-  disq.count();
 
   var curYear = new Date().getFullYear();
   var startYear = Date.parse('01 Jan '+curYear+' 00:00:00');
