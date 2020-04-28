@@ -1,3 +1,7 @@
+window.addEventListener('beforeunload', function (event) {
+  document.getElementById('menu').checked = false;
+});
+
 document.addEventListener('DOMContentLoaded', function (event) {
 
   if (browser.mobile) {
