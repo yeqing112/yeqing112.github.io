@@ -409,15 +409,18 @@ hr {
   font-size: 1em;
 }
 .search .search-result-content .search-result-desc {
-    font-size: .9em;
-    line-height: 22px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+  font-size: .9em;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .search .search-result-content .search-result-highlight {
-    display: inline-block;
-    background-color: rgba(255,255,0,0.7);
+  display: inline-block;
+  background-color: rgba(255,255,0,0.7);
+}
+small {
+  font-size:.8em;
 }
