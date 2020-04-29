@@ -43,6 +43,7 @@ permalink: /posts.json
     "image":{{ thumbnail | jsonify }},
     "thumb":{{ thumb | jsonify }},
     "tags":{{ post.tags | jsonify }},
-    "images":{{ imageSize | jsonify }}
+    "images":{{ imageSize | jsonify }},
+   "content":{{ content | strip_html | strip_newlines | strip | remove: '  ' | jsonify }}
     }{% unless forloop.last %},{% endunless %}
 {% endfor %}]
