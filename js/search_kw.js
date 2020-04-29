@@ -328,8 +328,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
           var item = posts[i];
           html += '<article class="post-item">' +
             '    <section class="post-item-summary">' +
-            '    <h3 class="post-item-title"><a class="post-item-link" href="111" title="111">111</a></h3>' +
-            '    <time class="post-item-date timeago" datetime="111"></time>' +
+            '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + '</a></h3>' +
+            '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
             '    </section>' +
             '</article>';
         }
