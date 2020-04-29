@@ -1,6 +1,4 @@
-window.addEventListener('beforeunload', function (event) {
-  document.getElementById('menu').checked = false;
-});
+
 
 function getQuery(variable) {
   var query = window.location.search.substring(1);
