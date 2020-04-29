@@ -318,13 +318,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
       }
       var title = pageNum == 1 ? cat + ' | ' + site.title : cat + '：第' + pageNum + '页 | ' + site.title;
       var url = pageNum == 1 ? page.url : page.url + '?page=' + pageNum;
-      var html = page.url;
+      var html = '';
       var total = posts.length;
       var first = (pageNum - 1) * pageSize;
       var last = total > pageNum * pageSize ? pageNum * pageSize : total;
 
-      if (page.url == '/ui/') {
-        for (var i = first; i < last; i++) {
+
           var item = posts[i];
           html += '<article class="post-item">' +
             '    <section class="post-item-summary">' +
@@ -332,8 +331,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
             '    </section>' +
             '</article>';
-        }
-	  }
+
 
       var totalPage = Math.ceil(total / pageSize);
       var prev = pageNum > 1 ? pageNum - 1 : 0;
