@@ -421,3 +421,82 @@ hr {
   display: inline-block;
   background-color: rgba(255,255,0,0.7);
 }
+
+// ------------------------------
+// 分类
+// ------------------------------
+
+.page-header .page-title {
+    border-bottom: 2px solid #e7e7eb;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end
+}
+
+.page-header .page-title:before {
+    content: "";
+    width: 0;
+    height: 2px;
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    background-color: #7db9de;
+    -webkit-transition: .5s .5s all ease-out;
+    transition: .5s .5s all ease-out
+}
+
+.page-header .page-title:after {
+    display: inline-block;
+    position: absolute;
+    bottom: -7px;
+    color: #7db9de;
+    background-color: #fff;
+    padding: 0 3px;
+    font-size: 12px;
+    line-height: 1;
+    opacity: 0;
+    -webkit-transition: .3s opacity;
+    transition: .3s opacity
+}
+
+.page-header .page-title:hover:after {
+    opacity: .6
+}
+
+.page-header .page-title .page-title-link {
+    color: #000;
+    border-bottom: none;
+    display: block
+}
+
+.page-header .page-title .page-title-desc {
+    color: #666;
+    font-size: 13px;
+    font-weight: 400
+}
+
+.page-header .page-title .icon {
+    margin-top: 4px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    cursor: pointer
+}
+
+.page-header .page-title .page-search-input {
+    padding: 0 5px;
+    width: 150px;
+    border: 1px solid #e7e7eb;
+    border-radius: 0;
+    font-size: 13px;
+    color: 333
+}
