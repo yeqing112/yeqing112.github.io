@@ -335,7 +335,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
       var first = (pageNum - 1) * pageSize;
       var last = total > pageNum * pageSize ? pageNum * pageSize : total;
 
-      if (page.url == '/ui/') {
         for (var i = first; i < last; i++) {
           var item = posts[i];
           html += '<article class="post-item">' +
@@ -345,7 +344,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             '    </section>' +
             '</article>';
         }
-	  }
 
       var totalPage = Math.ceil(total / pageSize);
       var prev = pageNum > 1 ? pageNum - 1 : 0;
