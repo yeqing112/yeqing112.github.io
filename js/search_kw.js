@@ -330,10 +330,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
           var item = posts[i];
           html += '<article class="post-item">' +
             '    <section class="post-item-summary">' +
-            '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + (item.images > 30 && item.category == 'life' ? '[' + item.images + 'P]' : '') + '</a></h3>' +
+            '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + '</a></h3>' +
             '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
             '    </section>' +
-            '    <a class="post-item-comment" title="查看评论" data-disqus-url="' + item.url + '" href="' + item.url + '#comment"></a>' +
             '</article>';
         }
 	  }
