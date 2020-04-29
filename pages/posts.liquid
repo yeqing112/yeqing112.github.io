@@ -44,6 +44,6 @@ permalink: /posts.json
     "thumb":{{ thumb | jsonify }},
     "tags":{{ post.tags | jsonify }},
     "images":{{ imageSize | jsonify }},
-   "content":{{ content | strip_html | strip_newlines | strip | remove: '  ' | jsonify }}
+    "content":{{ content | strip_html | strip_newlines | strip | remove: '  ' | jsonify }}
     }{% unless forloop.last %},{% endunless %}
 {% endfor %}]
