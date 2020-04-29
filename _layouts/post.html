@@ -6,7 +6,7 @@ layout: default
   <header class="post-header">
     <div class="post-meta">
       <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226;   {% assign sortedCategories = page.categories | sort %}<small>Categories: </small>
- {% for categories in sortedCategories %}<span class="post-meta__categories categories"><small> <a href="{{ site.baseurl }}/categories/#{{ categories }}"> {{ categories }}</a></small></span>{% endfor %} &#8226;  {% assign sortedTags = page.tags | sort %}<small>Tags: </small>{% for tag in sortedTags %}<span class="post-meta__tags tags"><small> <a href="{{ site.baseurl }}/tags/#{{ tag }}"> {{ tag }}</a></small></span>{% endfor %}
+ {% for categories in sortedCategories %}<span class="post-meta__categories categories"><small> <a href="{{ site.baseurl }}/category/#{{ categories }}"> {{ categories }}</a></small></span>{% endfor %} &#8226;  {% assign sortedTags = page.tags | sort %}<small>Tags: </small>{% for tag in sortedTags %}<span class="post-meta__tags tags"><small> <a href="{{ site.baseurl }}/tags/#{{ tag }}"> {{ tag }}</a></small></span>{% endfor %}
     </div>
     <h1 class="post-title">{{ page.title }}</h1>
   </header>

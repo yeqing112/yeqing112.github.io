@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 permalink: /ui/
 title: 界面设计
 ---
