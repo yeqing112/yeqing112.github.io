@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
   }
   
-  if (page.url == '/ui/' || page.url == '/life.html' || page.url == '/album.html') {
+  if (page.url == '/ui/' || page.url == '/ae/' || page.url == '/3d/' || page.url == '/pm/' || page.url == '/it/' || page.url == '/rs/') {
     var pageNum = !!getQuery('page') ? parseInt(getQuery('page')) : 1;
     var postData, posts = [];
     var xhrPosts = new XMLHttpRequest();
@@ -307,13 +307,25 @@ document.addEventListener('DOMContentLoaded', function (event) {
           cat = '界面设计';
           postClass = 'post-ui';
           break;
-        case '/life.html':
-          cat = '生活';
-          postClass = 'post-life';
+        case '/ae/':
+          cat = '动效设计';
+          postClass = 'post-ae';
           break;
-        case '/album.html':
-          cat = '相册';
-          postClass = 'post-album';
+        case '/3d/':
+          cat = '三维设计';
+          postClass = 'post-3d';
+          break;
+		case '/pm/':
+          cat = '产品设计';
+          postClass = 'post-pm';
+          break;
+		case '/it/':
+          cat = '野生技术';
+          postClass = 'post-it';
+          break;
+		case '/rs/':
+          cat = '资源分享';
+          postClass = 'post-rs';
           break;
       }
       var title = pageNum == 1 ? cat + ' | ' + site.title : cat + '：第' + pageNum + '页 | ' + site.title;
