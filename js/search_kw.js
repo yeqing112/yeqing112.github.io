@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       }
       var title = pageNum == 1 ? cat + ' | ' + site.title : cat + '：第' + pageNum + '页 | ' + site.title;
       var url = pageNum == 1 ? page.url : page.url + '?page=' + pageNum;
-      var html = 'category';
+      var html = category;
       var total = posts.length;
       var first = (pageNum - 1) * pageSize;
       var last = total > pageNum * pageSize ? pageNum * pageSize : total;
