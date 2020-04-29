@@ -12,4 +12,3 @@ title : 搜索
     <div class="search-result">
     </div>
 </div>
-<script type="text/javascript" src="/js/search_kw.js"></script>
