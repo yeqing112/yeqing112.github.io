@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       if (page.url == '/ui/') {
         for (var i = first; i < last; i++) {
           var item = posts[i];
-          html += 'item';
+          html +=  item;
         }
 	  }
 
