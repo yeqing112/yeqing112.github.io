@@ -323,14 +323,16 @@ document.addEventListener('DOMContentLoaded', function (event) {
       var first = (pageNum - 1) * pageSize;
       var last = total > pageNum * pageSize ? pageNum * pageSize : total;
 
+      if (page.url == '/ui/') {
 
           html += '<article class="post-item">' +
             '    <section class="post-item-summary">' +
-            '    <h3 class="post-item-title"><a class="post-item-link" href="" title="">1111</a></h3>' +
-            '    <time class="post-item-date timeago" datetime="112121212"></time>' +
+            '    <h3 class="post-item-title"><a class="post-item-link" href="" title="">111</a></h3>' +
+            '    <time class="post-item-date timeago" datetime="222"></time>' +
             '    </section>' +
             '</article>';
 
+	  }
 
       var totalPage = Math.ceil(total / pageSize);
       var prev = pageNum > 1 ? pageNum - 1 : 0;
