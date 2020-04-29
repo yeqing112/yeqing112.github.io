@@ -35,6 +35,7 @@ permalink: /search.json
     {% else %}
         {% assign content = post.content %}
     {% endif %}
+	
     "title": {{ post.title | jsonify}},
     "url": {{ post.url | jsonify }},
     "category":{{ post.category | jsonify }},
