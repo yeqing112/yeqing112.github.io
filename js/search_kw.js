@@ -71,10 +71,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
   var endYear = Date.parse('31 Dec '+curYear+' 23:59:59');
   var yearProgress = (Date.now() - startYear) / (endYear - startYear) * 100;
   var widthProgress = yearProgress.toFixed(2) + '%'
-  var styles = document.styleSheets;
-  styles[styles.length-1].insertRule('.page-header .page-title:before{width:'+widthProgress+'}',0);
-  styles[styles.length-1].insertRule('.page-header .page-title:after{left:'+widthProgress+'}',0);
-  styles[styles.length-1].insertRule('.page-header .page-title:after{content:"' + parseInt(yearProgress) + '%"}',0);
 
   function wxchoose() {
     wx.chooseImage({
