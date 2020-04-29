@@ -325,6 +325,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       var first = (pageNum - 1) * pageSize;
       var last = total > pageNum * pageSize ? pageNum * pageSize : total;
 
+      if (page.url == '/ui/') {
         for (var i = first; i < last; i++) {
           var item = posts[i];
           html += '<article class="post-item">' +
@@ -335,6 +336,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             '    <a class="post-item-comment" title="查看评论" data-disqus-url="' + item.url + '" href="' + item.url + '#comment"></a>' +
             '</article>';
         }
+	  }
 
       var totalPage = Math.ceil(total / pageSize);
       var prev = pageNum > 1 ? pageNum - 1 : 0;
