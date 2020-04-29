@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       var last = total > pageNum * pageSize ? pageNum * pageSize : total;
 
 
-          html += first;
+          html += last;
 
       var totalPage = Math.ceil(total / pageSize);
       var prev = pageNum > 1 ? pageNum - 1 : 0;
