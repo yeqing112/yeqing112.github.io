@@ -307,11 +307,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
       switch (page.url) {
         case '/ui/':
           cat = '界面设计';
-          postClass = 'post-tech';
+          postClass = 'post-ui';
           break;
         case '/life.html':
           cat = '生活';
-          pageSize = 12;
           postClass = 'post-life';
           break;
         case '/album.html':
@@ -329,7 +328,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
         for (var i = first; i < last; i++) {
           var item = posts[i];
           html += '<article class="post-item">' +
-            '    <i class="post-item-thumb" data-src="' + item.thumb + '" style="background-image:url(' + item.thumb + ')"></i>' +
             '    <section class="post-item-summary">' +
             '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + (item.images > 30 && item.category == 'life' ? '[' + item.images + 'P]' : '') + '</a></h3>' +
             '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
