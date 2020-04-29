@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
       }
       if (e.keyCode == 13) {
-        location.href = '/search/?keyword=' + this.value;
+        location.href = '/search/keyword-' + this.value;
       }
     })
   }
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     function search(keyword) {
       result.innerHTML = '';
       var title = '搜索：' + keyword + ' | ' + site.title;
-      var url = '/search/keyword=' + keyword;
+      var url = '/search/keyword-' + keyword;
       var total = result.length;
       var html = '';
       searchData.forEach(function (item) {
