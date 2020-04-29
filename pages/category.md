@@ -1,7 +1,7 @@
 ---
 layout: page
-title: CATEGORIES
-permalink: /categories/
+title: CATEGORY
+permalink: /category/
 ---
 
 <div class="tags-expo">
