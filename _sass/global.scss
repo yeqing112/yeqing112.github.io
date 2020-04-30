@@ -234,6 +234,17 @@ td:last-child {
 
 }
 
+.span.categories:before {
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 1px;
+    background: #96c1eb;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
 .excerpt {
   margin: 0;
   font-size: .9em;
