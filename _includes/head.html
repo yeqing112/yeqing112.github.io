@@ -1,15 +1,22 @@
+{% if page.description %}
+{% assign desc = page.description %}
+{% else %}
+{% if page.layout == "post" %}
+{% assign desc = page.content | split: '</p>' | first | strip_html  %}
+{% else %}
+{% assign desc = site.description %}
+{% endif %}
+{% endif %}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="author" content="Wei Wang">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if paginator and paginator.page != 1 %}第{{ paginator.page }}页 | {{ site.title }}{% elsif page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ desc }}">
+   <meta name="keywords" content="{% if page.tags %}{{ page.tags | join: ', '}}{% else %}{{ site.keywords | join: ', ' }}{% endif %}" />
+  <meta name="author" content="YEQING.RUN">
+<meta name="renderer" content="webkit">
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
