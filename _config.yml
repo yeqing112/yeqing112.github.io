@@ -23,12 +23,12 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-     - {title: 界面设计, description: 界面设计, url: 'https://yeqing.run/ui/'}
-     - {title: 动效设计, description: 动效设计, url: 'https://yeqing.run/ae/'}
-     - {title: 三维设计, description: 三维设计, url: 'https://yeqing.run/3d/'}
-     - {title: 产品设计, description: 产品设计, url: 'https://yeqing.run/pm/'}
-     - {title: 野生技术, description: 野生技术, url: 'https://yeqing.run/it/'}
-     - {title: 资源分享, description: 资源分享, url: 'https://yeqing.run/rs/'}
+     - {title: 界面设计, description: 界面设计, url: '/ui/'}
+     - {title: 动效设计, description: 动效设计, url: '/ae/'}
+     - {title: 三维设计, description: 三维设计, url: '/3d/'}
+     - {title: 产品设计, description: 产品设计, url: '/pm/'}
+     - {title: 野生技术, description: 野生技术, url: '/it/'}
+     - {title: 资源分享, description: 资源分享, url: '/rs/'}
 
 # Pagination
 plugins: [jekyll-paginate]
