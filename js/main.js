@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     var pageNum = !!getQuery('page') ? parseInt(getQuery('page')) : 1;
     var postData, posts = [];
     var xhrPosts = new XMLHttpRequest();
-    var category = page.url.slice(1, -1);
+    var category = page.title;
     xhrPosts.open('GET', '/posts.json', true);
     xhrPosts.onreadystatechange = function () {
       if (xhrPosts.readyState == 4 && xhrPosts.status == 200) {
