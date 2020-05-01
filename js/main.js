@@ -263,7 +263,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
             '      <div class="search-result-content">' +
             '        <div class="search-result-header">' +
             '           <div class="search-result-title"><a class="search-result-link" target="_blank" href="' + item.url + '">' + item.title + '</a></div>' +
-			'           <div class="search-result-content"><a class="search-result-link" target="_blank" href="' + item.url + '">' + item.content + '</a></div>' +
             '           <div class="search-result-comment"></div>' +
             '        </div>' +
             '        <div class="search-result-desc">' + item.content.slice(first, last).replace(new RegExp(realKeyword, 'g'), '<span class="search-result-highlight">' + realKeyword + '</span>') + '</div>' +
@@ -394,6 +393,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
           html += '<article class="post-item">' +
             '    <section class="post-item-summary">' +
             '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + '</a></h3>' +
+			'           <div class="post-item-content">' + item.content + '</div>' +
             '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
             '    </section>' +
             '</article>';
