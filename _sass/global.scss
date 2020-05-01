@@ -534,3 +534,37 @@ hr {
 .side-bar {width: 36px;position: fixed;bottom: 20px;right: 2px;font-size: 0;line-height: 0;z-index: 100;}
 .side-bar a {width: 36px;height: 36px;border-radius: 50%;display: inline-block;background-color: #ddd;margin-bottom: 2px;}
 }
+
+
+// ------------------------------
+// 分类列表分页
+// ------------------------------
+.pagination .pagination-list {
+  list-style-type: none;
+  margin: 10px auto;
+  font-size: 13px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 30px;
+  line-height: 30px;
+  color: #434343;
+}
+.pagination .pagination-item:first-child {
+  text-align: left;
+}
+.pagination .pagination-item {
+  padding: 0 10px;
+  text-align: center;
+  width: 100px;
+}
+.pagination .pagination-item-link {
+  color: #434343;
+}
