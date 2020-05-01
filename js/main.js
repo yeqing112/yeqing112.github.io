@@ -390,12 +390,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         for (var i = first; i < last; i++) {
           var item = posts[i];
-		  var first = index > 75 ? index - 75 : 0;
-          var last = first + 150;
           html += '<article class="post-item">' +
             '    <section class="post-item-summary">' +
             '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + '</a></h3>' +
-			'    <div class="post-item-content">' + item.content.slice(first, last) + '</div>' +
+			'    <div class="post-item-content">' + item.content.slice(0, 200) + '</div>' +
             '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
             '    </section>' +
             '</article>';
