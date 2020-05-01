@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       }
       var title = pageNum == 1 ? cat + ' | ' + site.title : cat + '：第' + pageNum + '页 | ' + site.title;
       var url = pageNum == 1 ? page.url : page.url + '?page=' + pageNum;
-      var html = category;
+      var html = '';
       var total = posts.length;
       var first = (pageNum - 1) * pageSize;
       var last = total > pageNum * pageSize ? pageNum * pageSize : total;
@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
           html += '<article class="post-item">' +
             '    <section class="post-item-summary">' +
             '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + '</a></h3>' +
-			'           <div class="post-item-content">' + item.content + '</div>' +
+			'    <div class="post-item-content">' + item.content + '</div>' +
             '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
             '    </section>' +
             '</article>';
