@@ -219,7 +219,8 @@ td:last-child {
 .time,
 .author,
 .tags,
-.categories {
+.categories
+.post-count {
   font-size: .8em;
   color: darken($gray, 2%);
 
