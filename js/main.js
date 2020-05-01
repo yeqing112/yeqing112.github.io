@@ -398,7 +398,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
             '    <div class="post-list__meta"><time  class="post-item-date timeago" datetime="' + item.date + '"></time>' +
             ' • <span  class="post-list__meta--tags tags">' + item.tags + '</span><a class="btn-border-small" href="' + item.url + '">继续阅读</a></div>' +
             '<hr class="post-list__divider">' +
-            '    </li>';
+            '    </li>' +
+			'<hr class="post-list__divider">';
         }
 
       var totalPage = Math.ceil(total / pageSize);
