@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
             '    <li>' +
             '    <h2 class="post-list__post-title post-title"><a href="' + item.url + '" title="' + item.title + '">' + item.title + '</a></h3>' +
 			'    <p class="excerpt">' + item.content.slice(0, 200) + '</p>' +
-            '    <div class="post-list__meta"><time datetime="' + item.date + '">{{item.date | date: "%F"}}</time>' +
+            '    <div class="post-list__meta"><time datetime="' + item.date + '">' + {{item.date | date: "%F"}} + '</time>' +
             ' • <span  class="post-list__meta--tags tags">' + item.tags + '<a class="btn-border-small" href="' + item.url + '">继续阅读</a></div>' +
             '<hr class="post-list__divider">' +
             '    </li>';
