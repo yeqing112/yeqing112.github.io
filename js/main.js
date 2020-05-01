@@ -390,13 +390,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         for (var i = first; i < last; i++) {
           var item = posts[i];
-          html += '<article class="post-item">' +
-            '    <section class="post-item-summary">' +
-            '    <h3 class="post-item-title"><a class="post-item-link" href="' + item.url + '" title="' + item.title + '">' + item.title + '</a></h3>' +
-			'    <div class="post-item-content">' + item.content.slice(0, 200) + '</div>' +
-            '    <time class="post-item-date timeago" datetime="' + item.date + '"></time>' +
-            '    </section>' +
-            '</article>';
+          html += '<div class="main-post-list">' +
+            '    <ol class="post-list">' +
+            '    <li>' +
+            '    <h2 class="post-list__post-title post-title"><a href="' + item.url + '" title="' + item.title + '">' + item.title + '</a></h3>' +
+			'    <p class="excerpt">' + item.content.slice(0, 200) + '</p>' +
+            '    <div class="post-list__meta"><time datetime="' + item.date + '"></time>' +
+            ' • <span  class="post-list__meta--tags tags">' + item.tags + '<a class="btn-border-small" href="' + item.url + '">继续阅读</a></div>' +
+            '<hr class="post-list__divider">' +
+            '    </li>';
         }
 
       var totalPage = Math.ceil(total / pageSize);
