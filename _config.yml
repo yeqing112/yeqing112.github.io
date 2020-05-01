@@ -1,7 +1,6 @@
 encoding: utf-8
 # Basic
 title: YEQING.RUN
-slogan:与人分享就是让自己快乐！
 subtitle: 夜風凜凜，獨回望舊事前塵。
 keywords: [YEQING.RUN, 界面设计, 动效设计, 三维设计,产品设计,野生技术,资源分享]
 description: Android Developer.
@@ -13,6 +12,9 @@ permalink: /:year:month/:title.html
 
 # Format
 highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
 # cover_color: red
