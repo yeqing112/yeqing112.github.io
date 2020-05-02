@@ -541,11 +541,29 @@ hr {
 .icon-category,
 .icon-tags {
   font-size: 13px;
+  color: #555;
+}
+.icon-search {
   position: absolute;
   top: 22px;
   right: 10px;
-  color: #555;
 }
+.icon-archive.icon-search {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+}
+.icon-category.icon-search {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+}
+.icon-tags.icon-search {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+}
+
 
 
 // ------------------------------
