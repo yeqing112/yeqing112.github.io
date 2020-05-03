@@ -1,6 +1,6 @@
 ---
 layout: post
-title: vim : Ubuntu安装vim报错的处理方法
+title: Ubuntu安装vim报错的处理方法
 date: 2020-05-03 18:28
 author: yeqing
 comments: true
