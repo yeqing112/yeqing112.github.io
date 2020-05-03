@@ -1,6 +1,6 @@
 ---
 layout: post
-title: vim : Depends: vim-common (= 2:7.4.052-1ubuntu3.1) but 2:7.4.1689-3ubuntu1.3 is to be installed
+title: vim : Ubuntu安装vim报错的处理方法
 date: 2020-05-03 18:28
 author: yeqing
 comments: true
