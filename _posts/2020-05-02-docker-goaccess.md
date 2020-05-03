@@ -24,6 +24,7 @@ vi /etc/apk/repositories
 ```
 将里面的内容替换为阿里云的源：
 > https://mirrors.aliyun.com/alpine/v3.6/main/
+>
 > https://mirrors.aliyun.com/alpine/v3.6/community/
 
 然后执行`apk update`
