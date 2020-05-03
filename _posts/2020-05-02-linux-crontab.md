@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [转]Linux定时任务Crontab命令详解
+title: (转)Linux定时任务Crontab命令详解
 date: 2020-05-03 10:59
 author: yeqing
 comments: true
