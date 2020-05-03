@@ -23,25 +23,25 @@ tags:
 
 运行一个Alpine的容器，选择Alpine作为系统基础镜像是因为Alpine轻巧的体积，基础镜像只有5.53MB，相比ubuntu镜像的88.9MB要小十几倍。
 
-```shell
+```bash
 root@ubuntu:~# docker run -it -p 8080:80 alpine sh
 ```
 
 安装nginx
 
-```ini
+```bash
 apk add nginx
 ```
 
 修改nginx配置
 
-```ini
+```bash
 vi /etc/nginx/conf.d/default.conf
 ```
 
 default.conf内容如下：
 
-```ini
+```bash
 server {
         listen 80 default_server;
 
@@ -52,19 +52,19 @@ server {
 
 创建Hello World
 
-```ini
+```bash
 mkdir /home/www && echo "Hello World" > /home/www/index.html
 ```
 
 创建/run/nginx目录
 
-```ini
+```bash
 mkdir /run/nginx
 ```
 
 启动nginx
 
-```ini
+```bash
 nginx
 ```
 
@@ -80,7 +80,7 @@ nginx安装成功，WEB服务访问正常！
 
 现在我们来安装PHP，方法还是一样，使用 `apk add` 命令来安装php7，php-fpm以及相关扩展。
 
-```ini
+```bash
 apk add --no-cache php7 php7-fpm php7-ftp php7-pdo php7-mysqli php7-simplexml php7-xmlwriter php7-zlib php7-imagick php7-memcached php7-sockets php7-mcrypt php7-zip php7-pgsql php7-pdo_odbc php7-odbc php7-curl php7-iconv php7-xml php7-json php7-gd php7-session php7-opcache php7-pdo_sqlite php7-mbstring php7-common php7-pdo_mysql
 ```
 
@@ -88,19 +88,19 @@ apk add --no-cache php7 php7-fpm php7-ftp php7-pdo php7-mysqli php7-simplexml ph
 
 现在启动php-fpm7
 
-```ini
+```bash
 php-fpm7
 ```
 
 修改nginx配置，添加php支持
 
-```ini
+```bash
 vi /etc/nginx/conf.d/default.conf
 ```
 
 内容如下
 
-```ini
+```bash
 server {
         listen 80 default_server;
 
@@ -121,13 +121,13 @@ server {
 
 在网站目录中创建phpinfo.php
 
-```shell
+```bash
 echo "<?php phpinfo(); ?>" > /home/www/phpinfo.php
 ```
 
 重启nginx
 
-```ini
+```bash
 nginx -s reload
 ```
 
@@ -143,13 +143,13 @@ PHP安装成功，WEB服务访问正常！
 
 我们不在Alpine里面安装MySQL，为了使用效率，这里我们直接使用官方镜像即可，新开一个ssh终端连接宿主机，在home目录下新建database目录
 
-```shell
+```bash
 mkdir /home/database
 ```
 
 使用官方mysql5.7镜像运行一个容器，root密码设置为123456，映射3306端口，并将宿主机/home/database目录挂载到容器/var/lib/mysql目录
 
-```shell
+```bash
 docker run -dit -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -v /home/database:/var/lib/mysql mysql:5.7
 ```
 
@@ -161,13 +161,13 @@ docker run -dit -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -v /home/database:/va
 
 进入mysql容器
 
-```ini
+```bash
 docker exec -it c8c85af64822 sh
 ```
 
 登录并创建wordpress数据库
 
-```ini
+```bash
 #用root用户登录
 mysql -u root -p
 #创建wordpress数据库
@@ -180,7 +180,7 @@ mysql> CREATE DATABASE wordpress；
 
 php网站环境和mysql数据库都准备好了，现在我们回到Alpine的ssh终端上，在容器内下载一个wordpress网站程序。
 
-```ini
+```bash
 #进入网站目录
 cd /home/www/
 #下载wordpress
