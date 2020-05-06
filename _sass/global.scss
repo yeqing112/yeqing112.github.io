@@ -597,3 +597,12 @@ hr {
 .pagination .pagination-item-link {
   color: #434343;
 }
+
+.side-search a {
+  font-size: 0;
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto;
+  background-image: url(../assets/static/search.svg) no-repeat;
+}
