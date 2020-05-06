@@ -605,4 +605,17 @@ hr {
   height: 36px;
   margin: 0 auto;
   background: url(../assets/static/search.svg) no-repeat;
+  opacity: .8;
+}
+
+.side-search a:hover {
+  opacity: 1;
+}
+
+.panel-cover__description a {
+  opacity: .8;
+}
+
+.panel-cover__description a:hover {
+  opacity: 1;
 }
