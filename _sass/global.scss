@@ -532,7 +532,12 @@ hr {
 // .chat-tips img {width: 138px;height: 138px;}
 
 @media screen and (max-width:768px){
-.side-bar {right: -2px;-webkit-transform: scale(.8);}
+.side-bar {
+    right: -2px;-webkit-transform: scale(.8);
+    }
+.read-more-item {
+    padding: 0 8px 0 0;
+	}
 }
 
 .icon-search,
