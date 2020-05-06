@@ -20,7 +20,7 @@ kramdown:
 # cover_color: red
 
 # The blog button should not be removed.
- blog_button:
+blog_button:
     title: 进入首页
     description: 进入首页
 
