@@ -569,7 +569,6 @@ hr {
 }
 
 
-
 // ------------------------------
 // 分类列表分页
 // ------------------------------
@@ -623,4 +622,37 @@ hr {
 
 .panel-cover__description a:hover {
   opacity: 1;
+}
+
+// ------------------------------
+// 网址导航
+// ------------------------------
+.item {
+  overflow: hidden;
+  margin: 20px 0 30px;
+}
+.xoxo, .blogroll {
+  margin-right: -1%;
+  margin: 0;
+}
+.blogroll li {
+  margin: 0 0 .2em 0;
+  line-height: 1.6em;
+  float: left;
+  width: 19%;
+  margin-right: 2%;
+  margin-top: 1%;
+  padding: 15px;
+  font-size: 12px;
+  height: 89px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  border-bottom: 15px solid #fff;
+}
+.blogroll li a {
+  margin-bottom: 5px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
 }
