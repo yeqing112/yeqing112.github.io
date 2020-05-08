@@ -520,7 +520,8 @@ hr {
 // .side-bar a {background: url(https://yeqing.run/assets/static/avatar.jpg) no-repeat;}
 .side-bar {width: 44px;position: fixed;bottom: 20px;right: 5px;font-size: 0;line-height: 0;z-index: 100;}
 .side-bar a {width: 44px;height: 44px;border-radius: 50%;display: inline-block;background-color: #f5f5f5;margin-bottom: 2px;}
-.side-bar a:hover {background-color: #669fdd; color:#fff}
+.side-bar a:hover {background-color: #669fdd; }
+.side-bar a:hover span {color: #fff; }
 // .side-bar .icon-qq {background-position: 0 -62px;}
 // .side-bar .icon-chat {background-position: 0 -130px;position: relative;}
 // .side-bar .icon-chat:hover .chat-tips {display: block;}
