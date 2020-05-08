@@ -3,11 +3,11 @@ layout: post
 title: 记录我网站的Dockerfile
 date: 2020-05-08 13:50
 author: yeqing
-comments: true
 category: 
 - 野生技术
 tags: 
 - dockerfile
+- docker
 ---
 
 本站（以前使用vps时）运行基于docker容器，在此记录Dockerfile镜像构建文件的相关内容，基础镜像使用alpine3.8
