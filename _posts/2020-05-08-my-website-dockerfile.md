@@ -1,45 +1,45 @@
 ---
 layout: post
-title: ¼ÇÂ¼ÎÒÍøÕ¾µÄDockerfile
+title: è®°å½•æˆ‘ç½‘ç«™çš„Dockerfile
 date: 2020-05-08 13:50
 author: yeqing
 comments: true
 category: 
-- Ò°Éú¼¼Êõ
+- é‡ç”ŸæŠ€æœ¯
 tags: 
 - dockerfile
 ---
 
-±¾Õ¾£¨ÒÔÇ°Ê¹ÓÃvpsÊ±£©ÔËĞĞ»ùÓÚdockerÈİÆ÷£¬ÔÚ´Ë¼ÇÂ¼Dockerfile¾µÏñ¹¹½¨ÎÄ¼şµÄÏà¹ØÄÚÈİ£¬»ù´¡¾µÏñÊ¹ÓÃalpine3.8
+æœ¬ç«™ï¼ˆä»¥å‰ä½¿ç”¨vpsæ—¶ï¼‰è¿è¡ŒåŸºäºdockerå®¹å™¨ï¼Œåœ¨æ­¤è®°å½•Dockerfileé•œåƒæ„å»ºæ–‡ä»¶çš„ç›¸å…³å†…å®¹ï¼ŒåŸºç¡€é•œåƒä½¿ç”¨alpine3.8
 
-µ¼ÈëµÄÊ±ºòÒ»°ãÖ¸Ã÷°æ±¾, ²»ÍÆ¼öÊ¹ÓÃ`latest`
+å¯¼å…¥çš„æ—¶å€™ä¸€èˆ¬æŒ‡æ˜ç‰ˆæœ¬, ä¸æ¨èä½¿ç”¨`latest`
 ```shell
 FROM alpine:3.8
 ```
 
-ĞŞ¸Ä¾µÏñÔ´µØÖ·Îª°¢ÀïÔÆ£¬²¢¸üĞÂ
+ä¿®æ”¹é•œåƒæºåœ°å€ä¸ºé˜¿é‡Œäº‘ï¼Œå¹¶æ›´æ–°
 ```shell
 RUN sed -i 's~dl-cdn.alpinelinux.org~mirrors.aliyun.com~' /etc/apk/repositories \
 	&& apk update \
 ```
 
-°²×°Èí¼ş,ÕâÀï°²×°µÄÊÇtzdata£¬phpÓëÏà¹ØÀ©Õ¹£¬nginx
+å®‰è£…è½¯ä»¶,è¿™é‡Œå®‰è£…çš„æ˜¯tzdataï¼Œphpä¸ç›¸å…³æ‰©å±•ï¼Œnginx
 ```shell
     && apk add --no-cache tzdata php7 php7-fpm php7-ftp php7-pdo php7-mysqli php7-simplexml php7-xmlwriter php7-zlib php7-imagick php7-memcached php7-sockets php7-mcrypt php7-zip php7-pgsql php7-pdo_odbc php7-odbc php7-curl php7-iconv php7-xml php7-json php7-gd php7-session php7-opcache php7-pdo_sqlite php7-mbstring php7-oauth php7-common php7-pdo_mysql nginx \
 ```
 
-ÉèÖÃÄ¬ÈÏÊ±Çø
+è®¾ç½®é»˜è®¤æ—¶åŒº
 ```shell
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
 ```
 
-ÎªnginxÔËĞĞĞÂ½¨/run/nginx
+ä¸ºnginxè¿è¡Œæ–°å»º/run/nginx
 ```shell
 	&& mkdir /run/nginx \
 ```
 
-ÇåÀíÔËĞĞÊ±²»ĞèÒªµÄÈí¼şºÍ°²×°»º´æ
+æ¸…ç†è¿è¡Œæ—¶ä¸éœ€è¦çš„è½¯ä»¶å’Œå®‰è£…ç¼“å­˜
 ```shell
     && apk del tzdata \
     && rm -rf /var/cache/apk/* \
@@ -47,16 +47,16 @@ RUN sed -i 's~dl-cdn.alpinelinux.org~mirrors.aliyun.com~' /etc/apk/repositories 
     && rm -rf /tmp/*
 ```
 
-Ö¸Ã÷¹¤×÷Ä¿Â¼
+æŒ‡æ˜å·¥ä½œç›®å½•
 ```shell
 WORKDIR /
 ```
-Ö¸¶¨ÈİÆ÷Æô¶¯½Å±¾£¨×Ô¼ºÃşË÷µÄ·½·¨£¬ÈÃphp¡¢nginxÔÚÈİÆ÷Æô¶¯Ê±×ÔÆô¶¯£©
+æŒ‡å®šå®¹å™¨å¯åŠ¨è„šæœ¬ï¼ˆè‡ªå·±æ‘¸ç´¢çš„æ–¹æ³•ï¼Œè®©phpã€nginxåœ¨å®¹å™¨å¯åŠ¨æ—¶è‡ªå¯åŠ¨ï¼‰
 ```shell
 CMD php-fpm7 && nginx && sh && exit
 ```
 
-ÍêÕûDockerfile
+å®Œæ•´Dockerfile
 ```shell
 FROM alpine:3.8
  
