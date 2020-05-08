@@ -8,7 +8,6 @@ category:
 - 野生技术
 tags: 
 - docker
-- docker run
 ---
 ## Docker容器的重启策略
 Docker容器的重启策略是面向生产环境的一个启动策略，在开发过程中可以忽略该策略。
