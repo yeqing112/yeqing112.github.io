@@ -31,6 +31,8 @@
     line-height: 1.3em;
 	padding: 6px 20px;
     border-left: 5px solid #BF1827;
+	background-color: #fff7f8; /* 不支持线性的时候显示 */
+    background-image: linear-gradient(to right, #fff7f8 , #fff);
 
     a {
       color: $gray-darkest;
