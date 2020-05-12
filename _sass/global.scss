@@ -73,9 +73,10 @@ h1 {
 
 .post h2 {
   font-size: 1.5.0em;
-  font-weight: bold;
   padding: 6px 20px;
   border-left: 5px solid #BF1827;
+  background-color: #fff7f8; /* 不支持线性的时候显示 */
+  background-image: linear-gradient(to right, #fff7f8 , #fff);
 }
 
 .post h3 {
