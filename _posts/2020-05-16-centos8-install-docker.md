@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 我就测试一次啊
-date: 2020-05-16 17:49
+title: MySQL常用命令大全整理
+date: 2020-05-11 14:29
 author: yeqing
 comments: true
 category:
 - 野生技术
 tags:
-- CentOS
-- Docker
+- MySQL
+- 数据库
 ---
