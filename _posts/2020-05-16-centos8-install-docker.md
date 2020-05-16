@@ -7,8 +7,8 @@ comments: true
 category:
 - 野生技术
 tags:
-- MySQL
-- 数据库
+- CentOS
+- Docker
 ---
 ## 背景简介：
 
