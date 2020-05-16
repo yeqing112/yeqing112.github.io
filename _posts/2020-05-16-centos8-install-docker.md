@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MySQL常用命令大全整理
-date: 2020-05-16 17:26
+date: 2020-05-16 17:15
 author: yeqing
 comments: true
 category:
@@ -10,6 +10,7 @@ tags:
 - MySQL
 - 数据库
 ---
+
 ## 背景简介：
 
 前两天遇到一位用户说CentOS8安装URLOS时报错，于是看了看，原因是缺少依赖，下面将解决办法记录一下。
