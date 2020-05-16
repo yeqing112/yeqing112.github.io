@@ -1,12 +1,12 @@
 ---
 layout: post
-title: MySQL常用命令大全整理
-date: 2020-05-11 14:29
+title: 解决CentOS8安装docker失败的问题
+date: 2020-05-16 17:05
 author: yeqing
 comments: true
 category:
 - 野生技术
 tags:
-- MySQL
-- 数据库
+- Docker
+- CentOS
 ---
