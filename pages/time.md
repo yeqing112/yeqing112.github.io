@@ -1,15 +1,8 @@
 ---
-layout: default
+layout: page
 title: 现在时刻
 permalink: /time/
 ---
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>现在时刻</title>
-</head>
-<body>
 <p id="time"></p>
 
 <script>
@@ -62,6 +55,3 @@ function addZero(i){
         }
     }, 1000);
 </script>
-
-</body>
-</html>
