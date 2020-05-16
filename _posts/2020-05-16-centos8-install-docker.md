@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 解决CentOS8安装Docker报错的问题
-date: 2020-05-11 14:29
+date: 2020-05-16 17:22
 author: yeqing
 comments: true
 category:
