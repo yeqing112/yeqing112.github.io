@@ -1,14 +1,14 @@
 ---
 layout: post
-title: 解决CentOS8安装Docker报错的问题
-date: 2020-05-16 17:22
+title: MySQL常用命令大全整理
+date: 2020-05-16 147:26
 author: yeqing
 comments: true
 category:
 - 野生技术
 tags:
-- CentOS
-- docker
+- MySQL
+- 数据库
 ---
 ## 背景简介：
 
