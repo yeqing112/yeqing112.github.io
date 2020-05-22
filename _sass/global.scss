@@ -20,10 +20,12 @@ body {
 }
 
 ::selection {
+  color:#fff;
   background: lighten($primary-color, 36%);
 }
 
 ::-moz-selection {
+  color:#fff;
   background: lighten($primary-color, 36%);
 }
 
