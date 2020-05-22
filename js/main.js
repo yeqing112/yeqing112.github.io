@@ -447,7 +447,10 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     return num
   }
-  
+
+})
+
+
     // 相关文章
     var postData;
     var xhrPosts = new XMLHttpRequest();
@@ -494,5 +497,3 @@ document.addEventListener('DOMContentLoaded', function (event) {
       }
       document.querySelector('#random-posts').insertAdjacentHTML('beforeend', html);
     }
-
-})
