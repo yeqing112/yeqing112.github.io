@@ -447,5 +447,52 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     return num
   }
+  
+    // 相关文章
+    var postData;
+    var xhrPosts = new XMLHttpRequest();
+    xhrPosts.open('GET', '/posts.json', true);
+    xhrPosts.onreadystatechange = function () {
+      if (xhrPosts.readyState == 4 && xhrPosts.status == 200) {
+        postData = JSON.parse(xhrPosts.responseText);
+        randomPosts(relatedPosts(page.tags, page.category));
+      }
+    }
+    xhrPosts.send(null);
+
+    function relatedPosts(tags, cat) {
+      var posts = [];
+      var used = [];
+      postData.forEach(function (item, i) {
+        if (item.tags.some(function (tag) { return tags.indexOf(tag) > -1; }) && item.url != location.pathname) {
+          posts.push(item);
+          used.push(i);
+        }
+      })
+      while (posts.length < 5) {
+        var index = Math.floor(Math.random() * postData.length);
+        var item = postData[index];
+        if (used.indexOf(index) == '-1' && item.category == cat && item.url != location.pathname) {
+          posts.push(item);
+          used.push(index);
+        }
+      }
+      return posts;
+    }
+
+    function randomPosts(posts) {
+      var used = [];
+      var counter = 0;
+      var html = '';
+      while (counter < 5) {
+        var index = Math.floor(Math.random() * posts.length);
+        if (used.indexOf(index) == '-1') {
+          html += '<li class="post-extend-item"><a class="post-extend-link" href="' + posts[index].url + '" title="' + posts[index].title + '">' + posts[index].title + '</a></li>\n';
+          used.push(index);
+          counter++;
+        }
+      }
+      document.querySelector('#random-posts').insertAdjacentHTML('beforeend', html);
+    }
 
 })
