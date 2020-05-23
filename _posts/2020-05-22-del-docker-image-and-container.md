@@ -35,6 +35,13 @@ docker rm $(docker ps -a -q)
 docker rmi $(docker images -q -f dangling=true)
 ```
 
+### 删除未使用的镜像
+
+```bash
+docker image prune -a
+docker image prune -a -f  # -f 强制，不需要确认
+```
+
 ### 删除所有镜像
 
 ```bash
