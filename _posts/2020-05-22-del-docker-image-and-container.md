@@ -19,7 +19,7 @@ docker kill $(docker ps -a -q)
 ### 删除所有容器（包含正在运行和已停止的容器）
 
 ```bash
-docker rm -f $(docker ps -a -q) ;
+docker rm -f $(docker ps -a -q) 
 ```
 
 ### 删除未运行的容器
