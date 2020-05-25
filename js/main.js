@@ -496,5 +496,46 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		  document.querySelector('#random-posts').insertAdjacentHTML('beforeend', html);
 		}
 	}
+	
+	  // 目录
+	  var toc = document.querySelector('.post-toc');
+	  var subTitles = document.querySelectorAll('.page-content h2,.page-content h3');
+	  var clientHeight = document.documentElement.clientHeight;
+	  function tocShow() {
+		var clientWidth = document.documentElement.clientWidth;
+		var tocFixed = clientWidth / 2 - 410 - toc.offsetWidth;
+		if (tocFixed < 15) {
+		  toc.style.visibility = 'hidden';
+		} else {
+		  toc.style.visibility = 'visible';
+		  toc.style.left = tocFixed + 'px';
+		}
+	  }
+	  function tocScroll() {
+		var sectionIds = [];
+		var sections = [];
+		for (var i = 0; i < subTitles.length; i++) {
+		  sectionIds.push(subTitles[i].id);
+		  sections.push(subTitles[i].offsetTop);
+		}
+		var pos = document.documentElement.scrollTop || document.body.scrollTop;
+		var lob = document.body.offsetHeight - subTitles[subTitles.length - 1].offsetTop;
+		for (var i = 0; i < sections.length; i++) {
+		  if (i === subTitles.length - 1 && clientHeight > lob) {
+			pos = pos + (clientHeight - lob);
+		  }
+		  if (sections[i] <= pos && sections[i] < pos + clientHeight) {
+			if (document.querySelector('.active')) {
+			  document.querySelector('.active').classList.remove('active');
+			}
+			document.querySelector('[href="#' + sectionIds[i] + '"]').classList.add('active');
+		  }
+		}
+	  }
+	  if (!!toc) {
+		document.addEventListener('scroll', tocScroll, false);
+		window.addEventListener('resize', tocShow, false);
+		tocShow();
+	  }
 
 })
