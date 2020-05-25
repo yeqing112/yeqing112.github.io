@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 			  used.push(i);
 			}
 		  })
-		  while (posts.length < 5) {
+		  for (posts.length < 5) {
 			var index = Math.floor(Math.random() * postData.length);
 			var item = postData[index];
 			if (used.indexOf(index) == '-1' && item.category == cat && item.url != location.pathname) {
