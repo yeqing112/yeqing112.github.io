@@ -13,6 +13,7 @@ layout: default
   </header>
 
   <section class="post">
+    {% assign content = content | replace_first:'id="markdown-toc"','class="post-toc"' %}
     {{ content }}
   </section>
 </article>
