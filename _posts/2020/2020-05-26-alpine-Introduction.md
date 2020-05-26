@@ -73,7 +73,7 @@ root@ubuntu:~#
 
 # Alpine的基本配置
 
-## 1、网络相关配置
+## 1. 网络相关配置
 
 ### 主机名文件
 
@@ -130,7 +130,7 @@ iface eth0 inet static
 
     /etc/init.d/networking restart
 
-## 2、更新国内源
+## 2. 更新国内源
 Alpine的源文件为：
 
 `/etc/apk/repositories`
@@ -152,7 +152,7 @@ https://mirrors.ustc.edu.cn/alpine/v3.6/main/
 https://mirrors.ustc.edu.cn/alpine/v3.6/community/
 
 
-## 软件包管理工具apk的基本使用
+## 3. 软件包管理工具apk的基本使用
 alpine 提供了非常好用的apk软件包管理工具，
 
 可以方便地安装、删除、更新软件。
@@ -211,10 +211,10 @@ OK: 6 MiB in 14 packages
 ### 获取更多apk包管理的命令参数
 命令：`apk --help`
 
-## 3、Alpine用户和用户组的创建
+## 4. Alpine用户和用户组的创建
 
 ### 创建用户组
-命令：`addgroup`，注意，不是groupadd！
+命令：`addgroup`，注意，不是groupadd
 
 ```bash
 addgroup -S www   # 创建一个名为www的用户组
