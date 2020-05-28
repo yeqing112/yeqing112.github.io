@@ -316,7 +316,7 @@ td:last-child {
 .content-wrapper {
   z-index: 800;
   width: 70%;
-  margin-left: 30%;
+  margin-left: 25%;
 }
 
   .content-wrapper__inner {
@@ -703,4 +703,6 @@ ul.post-toc {
     padding: 10px;
     font-size: .8em;
     list-style-type: none;
+	width: 200px;
+    overflow: hidden;
 }
