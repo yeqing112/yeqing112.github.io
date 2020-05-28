@@ -308,7 +308,7 @@ git push origin --tags
 # 分支管理
 
 分支相当与平行宇宙, 互不干扰, 哪天合并了就拥有了所有平行宇宙的特性
-[![img](../assets/images/gitBranch.png)](https://cdn.yangbingdong.com/img/git/gitBranch.png)
+![](../assets/images/gitBranch.png)
 
 ## 创建与合并分支
 
@@ -317,7 +317,7 @@ git push origin --tags
 - 当我们创建新的分支, 例如 `dev` 时, Git新建了一个指针叫 `dev` , 指向 `master` 相同的提交, 再把 `HEAD` 指向 `dev` , 就表示当前分支在 `dev` 上
 - Git创建一个分支很快, 因为除了增加一个 `dev` 指针, 改改 `HEAD` 的指向, 工作区的文件都没有任何变化
 - 当 `HEAD` 指向 `dev` , 对工作区的修改和提交就是针对 `dev` 分支了, 比如新提交一次后, `dev` 指针往前移动一步, 而 `master` 指针不变
-  [![img](../assets/images/gitBranch01.png)](https://cdn.yangbingdong.com/img/git/gitBranch01.png)
+![img](../assets/images/gitBranch01.png)
 
 查看分支: `git branch`
 创建分支: `git branch <name>`
@@ -329,7 +329,8 @@ git push origin --tags
 ## 解决冲突
 
 合并分支并不是每次都不会出问题, 如不同的分支对同一个文件同一行都被修改过, 就会出现以下情况
-[![img](../assets/images/gitConflict.png)](https://cdn.yangbingdong.com/img/git/gitConflict.png)
+![img](../assets/images/gitConflict.png)
+
 那么再次合并有可能会冲突
 
 ```bash
@@ -377,7 +378,7 @@ Git,too fast too simple
 ```
 
 ok了, 再次 `add` 和 `commit` , 现在 `master` 分支和`feature1`分支变成了这样
-[![img](../assets/images/gitFixConflict.png)](https://cdn.yangbingdong.com/img/git/gitFixConflict.png)
+![img](../assets/images/gitFixConflict.png)
 
 ## 多PC协同开发
 
@@ -422,7 +423,7 @@ git branch --set-upstream <branch> origin/<branch>
 
 > 执行 `git commit` 时使用 emoji 为本次提交打上一个 “标签”, 使得此次 commit 的主要工作得以凸现, 也能够使得其在整个提交历史中易于区分与查找.
 
-[![img](../assets/images/git-emoji.png)](https://cdn.yangbingdong.com/img/git/git-emoji.png)
+![img](../assets/images/git-emoji.png)
 
 只需要加上 emoji 标签即可:
 
@@ -467,9 +468,9 @@ git commit -m ":tada: Initialize Repo"
 
 更多标签参考:
 
-***https://gitmoji.carloscuesta.me/\***
+***https://gitmoji.carloscuesta.me/***
 
-***https://www.webfx.com/tools/emoji-cheat-sheet/\***
+***https://www.webfx.com/tools/emoji-cheat-sheet/***
 
 # 同步更新Github Fork的项目
 
@@ -516,7 +517,7 @@ git config --global credential.helper store
 
 Git真的异常强大, 但命令繁多, 需多加练习
 
-> ***参考: [廖雪峰老师的教程](http://www.liaoxuefeng.com/)\***
+> ***参考: [廖雪峰老师的教程](http://www.liaoxuefeng.com/)***
 
 附命令图一张:
-[![img](../assets/images/gitCommand.png)](https://cdn.yangbingdong.com/img/git/gitCommand.png)
+![img](../assets/images/gitCommand.png)
