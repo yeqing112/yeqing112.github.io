@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	
     // 添加TOC关闭按钮
 		var toc = document.querySelector('.post-toc');
-		var tocbutton = '<div class = "close"></div>';
+		var tocbutton += '<div class = "close"></div>';
 		
 		if (toc) {
 			document.querySelector('.post-toc').innerHTML = tocbutton;
