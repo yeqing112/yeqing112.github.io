@@ -689,3 +689,18 @@ section.post-extend-content {
   float: left;
   width: 50%;
 }
+
+
+// ------------------------------
+// TOC-目录
+// ------------------------------
+
+ul.post-toc {
+    position: fixed;
+    top: 10px;
+    right: 80px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    font-size: .8em;
+    list-style-type: none;
+}
