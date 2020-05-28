@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       var n = document.documentElement.scrollTop || document.body.scrollTop,
         i = document.body.offsetHeight - y[y.length - 1].offsetTop;
       for (r = 0; r < e.length; r++) r === y.length - 1 && x > i && (n += x - i), e[r] <= n && e[r] < n + x && (document.querySelector(".active") && document.querySelector(".active").classList.remove("active"), document.querySelector('[href="#' + t[r] + '"]').classList.add("active"))
-    }
+    }, !1)
 
 
   // 目录
