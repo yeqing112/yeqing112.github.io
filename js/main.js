@@ -499,4 +499,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		}
 	}
 	
+    // 添加TOC关闭按钮
+	function f('.post-toc') {
+    var o = document.getElementById('.post-toc');
+		if(o) {
+			tocbutton = '<div class = "close"></div>'
+			document.querySelector('.post-toc').innerHTML = tocbutton;
+			}
+	}
+	
 })
