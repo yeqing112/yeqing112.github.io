@@ -134,6 +134,23 @@ document.addEventListener('DOMContentLoaded', function (event) {
     });
   }
 
+
+      var v = document.querySelector(".post-toc"),
+      y = document.querySelectorAll(".page-content h2,.page-content h3"),
+      x = document.documentElement.clientHeight;
+
+    function b() {
+      var t = document.documentElement.clientWidth / 2 - 410 - v.offsetWidth;
+      t < 15 ? v.style.visibility = "hidden" : (v.style.visibility = "visible", v.style.left = t + "px")
+    }
+    v && (document.addEventListener("scroll", function () {
+      for (var t = [], e = [], r = 0; r < y.length; r++) t.push(y[r].id), e.push(y[r].offsetTop);
+      var n = document.documentElement.scrollTop || document.body.scrollTop,
+        i = document.body.offsetHeight - y[y.length - 1].offsetTop;
+      for (r = 0; r < e.length; r++) r === y.length - 1 && x > i && (n += x - i), e[r] <= n && e[r] < n + x && (document.querySelector(".active") && document.querySelector(".active").classList.remove("active"), document.querySelector('[href="#' + t[r] + '"]').classList.add("active"))
+    }
+
+
   // 目录
   var toc = document.querySelector('.post-toc');
   var subTitles = document.querySelectorAll('.page-content h2,.page-content h3');
