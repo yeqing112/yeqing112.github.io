@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		var tocbutton = '<div class = "close"></div>';
 		
 		if (toc) {
-			document.querySelector('.post-toc').innerHTML = tocbutton;
+			toc.insertAdjacentHTML('beforeBegin',tocbutton);
 			}
 	
 })
