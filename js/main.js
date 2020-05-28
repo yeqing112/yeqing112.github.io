@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       toc.style.left = tocFixed + 'px';
     }
   }
-/*   function tocScroll() {
+/*    function tocScroll() {
     var sectionIds = [];
     var sections = [];
     for (var i = 0; i < subTitles.length; i++) {
@@ -169,13 +169,13 @@ document.addEventListener('DOMContentLoaded', function (event) {
         document.querySelector('[href="#' + sectionIds[i] + '"]').classList.add('active');
       }
     }
-  } */
+  }
   if (!!toc) {
     document.addEventListener('scroll', tocScroll, false);
     window.addEventListener('resize', tocShow, false);
     tocShow();
   }
-
+ */
 
   var links = document.getElementsByTagName('a');
   var noteArr = [];
