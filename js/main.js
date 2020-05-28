@@ -500,12 +500,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	}
 	
     // 添加TOC关闭按钮
-	function f('.post-toc') {
-    var o = document.getElementById('.post-toc');
-		if(o) {
+		if(element.className.indexOf('post-toc') !== -1) {
 			tocbutton = '<div class = "close"></div>'
 			document.querySelector('.post-toc').innerHTML = tocbutton;
 			}
-	}
 	
 })
