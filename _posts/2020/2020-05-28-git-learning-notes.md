@@ -13,17 +13,17 @@ tags:
 * toc
 {:toc}
 
-# 前言
+## 前言
 
 What is Git?
 Git是目前世界上最先进的分布式版本控制系统（没有之一）, 而且是一款免费、开源的分布式版本控制系统, 用于敏捷高效地处理任何或小或大的项目
 一直以来, 博主开发项目用的版本管理系用都是SVN, 其实早就听闻过Git, 一直没用过, 后来接触Github和Hexo博客框架, 才真正意义上开始接触Git, 感受就是高端大气上档次！
 
-# 简介
+## 简介
 
 Git是Linux系统的开发者Linus在2005年的时候, BitKeeper的东家BitMover公司回收了Linux社区的免费使用权的情况下, 在仅仅的两周内Linus用C写出了一个分布式版本控制系统, 这就是Git（超级牛X）！从此, Linux系统的源码已经由Git管理了. 逐渐地, Git迅速成为最流行的分布式版本控制系统, 尤其是在Github上线之后, 无数开源项目开始迁移至GitHub, 包括jQuery, PHP, Ruby等等
 
-# Git安装
+## Git安装
 
 在**Debian**或者**Ubuntu Linux**下的Git安装非常简单, 直接一条命令搞定
 
@@ -45,15 +45,15 @@ git config --global user.email "email@example.com"
 每次提交, 都会记录这两个值, `--global` 参数, 表示你这台机器上所有的Git仓库都会使用这个配置
 可使用 `git config -l` 查看全局配置信息
 
-# 运行前配置
+## 运行前配置
 
 一般在新的系统上, 我们都需要先配置下自己的 Git 工作环境. 配置工作只需一次, 以后升级时还会沿用现在的配置.
 
-## 配置文件如何生效
+### 配置文件如何生效
 
 对于 Git 来说, 配置文件的权重是**仓库>全局>系统**. Git 会使用这一系列的配置文件来存储你定义的偏好, 它首先会查找 `/etc/gitconfig`文件（系统级）, 该文件含有对系统上所有用户及他们所拥有的仓库都生效的配置值. 接下来 Git 会查找每个用户的 `~/.gitconfig` 文件（全局级）. 最后 Git 会查找由用户定义的各个库中Git目录下的配置文件 `.git/config`（仓库级）, 该文件中的值只对当前所属仓库有效. 以上阐述的三 层配置从一般到特殊层层推进, 如果定义的值有冲突, 以后面层中定义的为准, 例如: `.git/config` 和 `/etc/gitconfig` 的较量中, `.git/config` 取得了胜利.
 
-## 查看配置
+### 查看配置
 
 格式: `git config [--local|--global|--system] -l`
 
@@ -73,7 +73,7 @@ git config --global -l
 git config --system -l
 ```
 
-## 修改配置
+### 修改配置
 
 格式: `git config [--local|--global|--system] key value`
 
@@ -84,7 +84,7 @@ git config --global user.name ybd
 git config --global user.email yangbingdong1994@gmail.com
 ```
 
-# 创建仓库（Repository）
+## 创建仓库（Repository）
 
 创建一个目录并进入, 进行初始化仓库
 
@@ -115,13 +115,13 @@ git commit -m "first commit"  #将缓存区的文件提交到本地仓库
  create mode 100644 read
 ```
 
-# 操作的自由穿越
+## 操作的自由穿越
 
 要随时掌握工作区的状态: `git status`
 查看修改内容: `git diff read`
 查看版本历史信息 `got log` 或 `git log --pretty=oneline`
 
-## 版本穿越
+### 版本穿越
 
 退到上一个版本:
 
@@ -132,14 +132,14 @@ git reset --hard HEAD^
 上上一个版本就是 `HEAD^^`, 当然往上100个版本写100个^比较容易数不过来, 所以写成 `HEAD~100`
 要重返未来, 查看命令历史: `git reflog`
 
-## 修改管理
+### 修改管理
 
 添加文件到缓存区: `git add read` 或 `git add -A`
 然后提交: `git commit -m "msg"`
 查看状态: `git status`
 **每次修改, 如果不add到暂存区, 那就不会加入到commit中**
 
-## 撤销修改
+### 撤销修改
 
 当你发现工作区的修改有错误的时候, 可丢弃工作区的修改:
 
@@ -170,7 +170,7 @@ git checkout -- read
 
 `git reset`命令既可以回退版本, 也可以把暂存区的修改回退到工作区. 当我们用HEAD时, 表示最新的版本
 
-## 删除文件
+### 删除文件
 
 如果把工作区中的文件删除了, 那么工作区和版本库就不一致, `git status` 命令会立刻告诉你哪些文件被删除了
 现在有两个选择
@@ -190,11 +190,11 @@ git checkout -- read
 
 `git checkout` 其实是用版本库里的版本替换工作区的版本, 无论工作区是修改还是删除, 都可以“一键还原”
 
-# 远程仓库
+## 远程仓库
 
 那么学会了Git的基本操作之后, 对于分布式管理我们还需要有一个远程仓库供大家一起共同开发, 好在有一个全世界最大最神奇的同性交友网—— *[Github](https://github.com/)*
 那么在使用Github之前呢, 我们需要设置一下与Github的SSH通讯:
-\1. 创建SSH Key（已有.ssh目录的可以略过）
+1. 创建SSH Key（已有.ssh目录的可以略过）
 
 ```bash
 ssh-keygen -t rsa -C "youremail@example.com"
@@ -203,9 +203,9 @@ ssh-keygen -t rsa -C "youremail@example.com"
 你需要把邮件地址换成你自己的邮件地址, 然后一路回车, 使用默认值即可, 由于这个Key也不是用于军事目的, 所以也无需设置密码
 如果一切顺利的话, 可以在用户主目录里找到 `.ssh` 目录, 里面有 `id_rsa` 和 `id_rsa.pub` 两个文件, 这两个就是SSH Key的秘钥对, `id_rsa` 是私钥, 不能泄露出去, `id_rsa.pub` 是公钥, 可以放心地告诉任何人
 
-\2. 登陆GitHub, 打开“Account settings”, “SSH Keys”页面, 然后, 点“Add SSH Key”, 填上任意Title, 在Key文本框里粘贴`id_rsa.pub`文件的内容, 最后点“Add Key”
+2. 登陆GitHub, 打开“Account settings”, “SSH Keys”页面, 然后, 点“Add SSH Key”, 填上任意Title, 在Key文本框里粘贴`id_rsa.pub`文件的内容, 最后点“Add Key”
 
-## 添加远程仓库
+### 添加远程仓库
 
 首先到Github创建一个仓库
 然后与本地关联:
@@ -231,15 +231,15 @@ git push -u origin master
 git push
 ```
 
-## 从远程仓库克隆
+### 从远程仓库克隆
 
 ```bash
 git git@github.com:your-name/repo-name.git
 ```
 
-# 标签管理
+## 标签管理
 
-## 查看tag
+### 查看tag
 
 列出所有tag:
 
@@ -255,7 +255,7 @@ git tag -l v1.*
 
 这样就只会列出1.几的版本.
 
-## 创建tag
+### 创建tag
 
 创建轻量级`tag`:
 
@@ -283,7 +283,7 @@ git log --oneline
 git tag -a v1.1 8a5cbc2
 ```
 
-## 删除tag
+### 删除tag
 
 很简单, 知道`tag`名称后:
 
@@ -297,7 +297,7 @@ git tag -d v1.0
 git push origin --delete tag <tagname>
 ```
 
-## 共享tag
+### 共享tag
 
 我们在执行`git push`的时候, `tag`是不会上传到服务器的, 比如现在的`github`, 创建`tag`后`git push`, 在`github`网页上是看不到`tag`的, 为了共享这些`tag`, 你必须这样:
 
@@ -305,12 +305,12 @@ git push origin --delete tag <tagname>
 git push origin --tags
 ```
 
-# 分支管理
+## 分支管理
 
 分支相当与平行宇宙, 互不干扰, 哪天合并了就拥有了所有平行宇宙的特性
 ![](../assets/images/gitBranch.png)
 
-## 创建与合并分支
+### 创建与合并分支
 
 - 每次提交, Git都把它们串成一条时间线, 这条时间线就是一个分支. 截止到目前, 只有一条时间线, 在Git里, 这个分支叫主分支, 即 `master` 分支
 - 一开始的时候, `master` 分支是一条线, Git用 `master` 指向最新的提交, 再用 `HEAD` 指向 `master` , 就能确定当前分支, 以及当前分支的提交点
@@ -326,7 +326,7 @@ git push origin --tags
 合并某分支到当前分支: `git merge <name>`
 删除分支: `git branch -d <name>`
 
-## 解决冲突
+### 解决冲突
 
 合并分支并不是每次都不会出问题, 如不同的分支对同一个文件同一行都被修改过, 就会出现以下情况
 ![img](../assets/images/gitConflict.png)
@@ -380,7 +380,7 @@ Git,too fast too simple
 ok了, 再次 `add` 和 `commit` , 现在 `master` 分支和`feature1`分支变成了这样
 ![img](../assets/images/gitFixConflict.png)
 
-## 多PC协同开发
+### 多PC协同开发
 
 当你从远程仓库克隆时, 实际上Git自动把本地的 `master` 分支和远程的 `master` 分支对应起来了, 并且, 远程仓库的默认名称是 `origin`
 
@@ -419,7 +419,7 @@ git checkout -b <branch> origin/<branch>
 git branch --set-upstream <branch> origin/<branch>
 ```
 
-# Commit 带上 emoji 表情
+## Commit 带上 emoji 表情
 
 > 执行 `git commit` 时使用 emoji 为本次提交打上一个 “标签”, 使得此次 commit 的主要工作得以凸现, 也能够使得其在整个提交历史中易于区分与查找.
 
@@ -472,7 +472,7 @@ git commit -m ":tada: Initialize Repo"
 
 ***https://www.webfx.com/tools/emoji-cheat-sheet/***
 
-# 同步更新Github Fork的项目
+## 同步更新Github Fork的项目
 
 1、`fork`项目并`clone`到本地
 
@@ -499,9 +499,9 @@ git merge upstream/master
 
 6、`push`到自己的远程仓库, 搞定～
 
-# 附录
+## 附录
 
-## git pull 时每次都要输入用户名和密码的解决办法
+### git pull 时每次都要输入用户名和密码的解决办法
 
 如果我们git clone的下载代码的时候是连接的https://而不是git@git (ssh)的形式，当我们操作git pull/push到远程的时候，总是提示我们输入账号和密码才能操作成功，频繁的输入账号和密码会很麻烦。
 
@@ -513,7 +513,7 @@ git config --global credential.helper store
 
 然后你会在你本地生成一个文本，上边记录你的账号和密码。当然这些你可以不用关心。然后你使用上述的命令配置好之后，再操作一次git pull，然后它会提示你输入账号密码，这一次之后就不需要再次输入密码了。
 
-# 最后
+## 最后
 
 Git真的异常强大, 但命令繁多, 需多加练习
 
