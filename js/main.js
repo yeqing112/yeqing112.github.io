@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
 
   // 目录
-  var toc = document.querySelector('.post-toc');
+/*   var toc = document.querySelector('.post-toc');
   var subTitles = document.querySelectorAll('.page-content h2,.page-content h3');
   var clientHeight = document.documentElement.clientHeight;
   function tocShow() {
@@ -148,7 +148,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
       toc.style.visibility = 'visible';
       toc.style.left = tocFixed + 'px';
     }
-  }
+  } */
+  
 /*    function tocScroll() {
     var sectionIds = [];
     var sections = [];
