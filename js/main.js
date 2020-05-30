@@ -501,12 +501,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
 	
     // 添加TOC按钮
 		var toc = document.querySelector('.post-toc');
-		var navbar1 = '<div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i>';
-		var navbar2 = '</div>';
+		var navbar1 = '<div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i></div>';
+		var navbar2 = '<div></div>';
 		
 		if (toc) {
 			toc.insertAdjacentHTML('beforeBegin',navbar1);
-			//toc.insertAdjacentHTML('afterEnd',navbar2);
+			toc.insertAdjacentHTML('afterEnd',navbar2);
 			}
 	
 })
