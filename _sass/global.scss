@@ -720,13 +720,14 @@ ul.post-toc {
     max-height: 70%;
     overflow-y: auto;
     overflow-x: hidden;
+	display:none;
 }
 
 div#anchor-navigation-ex-navbar {
     padding: 20px 10px;
     position: fixed;
     top: 10px;
-    right: 50px;
+    right: 60px;
     z-index: 1000;
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, .07);
@@ -738,4 +739,12 @@ div#anchor-navigation-ex-navbar {
     position: fixed;
     z-index: 1000;
     cursor: pointer;
+}
+
+div#anchor-navigation-ex-navbar:hover + ul.post-toc {
+	display:block;
+}
+
+ul.post-toc:hover {
+	display:block;
 }
