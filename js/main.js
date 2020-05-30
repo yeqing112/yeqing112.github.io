@@ -507,7 +507,6 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		if (toc) {
 			toc.insertAdjacentHTML('beforeBegin',navbar1);
 			toc.insertAdjacentHTML('afterEnd',navbar2);
-			$(".post-toc").wrap("<div id="anchor-navigation-ex-navbar"></div>");
 			}
 	
 })
