@@ -697,7 +697,7 @@ section.post-extend-content {
 
 ul.post-toc {
     position: fixed;
-    top: 10px;
+    top: 68px;
     right: 50px;
     background-color: #f9f9f9;
     padding: 10px;
@@ -726,7 +726,7 @@ ul.post-toc {
 div#anchor-navigation-ex-navbar {
     padding: 20px 10px;
     position: fixed;
-    top: 10px;
+    top: 68px;
     right: 60px;
     z-index: 1000;
     background-color: #fafafa;
@@ -747,4 +747,8 @@ div#anchor-navigation-ex-navbar:hover + ul.post-toc {
 
 ul.post-toc:hover {
 	display:block;
+}
+
+ul.post-toc ui li a:hover {
+	text-decoration:underline;
 }
