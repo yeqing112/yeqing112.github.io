@@ -714,7 +714,7 @@ ul.post-toc {
     padding: 20px 10px;
     position: fixed;
     white-space: nowrap;
-    z-index: 999;
+    z-index: 1000;
     cursor: pointer;
     text-align: left;
     max-height: 70%;
@@ -737,7 +737,7 @@ div#anchor-navigation-ex-navbar {
     background-clip: padding-box;
     padding: 10px 10px;
     position: fixed;
-    z-index: 1000;
+    z-index: 999;
     cursor: pointer;
 }
 
