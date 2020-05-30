@@ -506,7 +506,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 		
 		if (toc) {
 			toc.insertAdjacentHTML('beforebegin',navbar1);
-			toc.insertAdjacentHTML('beforeend',navbar2);
+			toc.insertAdjacentHTML('afterend',navbar2);
 			}
 	
 })
