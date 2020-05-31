@@ -554,6 +554,10 @@ hr {
 // .chat-tips i {width: 9px;height: 16px;display: inline-block;position: absolute;right: -9px;top: 80px;background-position:-88px -350px;}
 // .chat-tips img {width: 138px;height: 138px;}
 
+// ------------------------------
+// side-bar 适配移动端
+// ------------------------------
+
 @media screen and (max-width:768px){
 .side-bar {
     right: -2px;-webkit-transform: scale(.8);
@@ -720,11 +724,8 @@ ul.post-toc {
 }
 
 div#anchor-navigation-ex-navbar {
-    padding: 20px 10px;
-    position: fixed;
     top: 68px;
     right: 60px;
-    z-index: 1000;
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, .07);
     border-radius: 1px;
@@ -747,4 +748,19 @@ ul.post-toc:hover {
 
 ul.post-toc li a:hover {
 	text-decoration:underline;
+}
+
+// ------------------------------
+// TOC-目录 适配移动端
+// ------------------------------
+
+@media screen and (max-width:960px){
+div#anchor-navigation-ex-navbar {
+    right:auto;
+	left:30px;
+    }
+ul.post-toc {
+    right:auto;
+	left:-6px;
+	}
 }
