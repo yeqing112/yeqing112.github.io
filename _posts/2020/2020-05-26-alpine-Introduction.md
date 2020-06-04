@@ -135,24 +135,24 @@ Alpine的源文件为：
 
 `/etc/apk/repositories`
 
-默认的源地址为：http://dl-cdn.alpinelinux.org/
+默认的源地址为：[http://dl-cdn.alpinelinux.org/](http://dl-cdn.alpinelinux.org/)
 
 可以编辑源文件 `/etc/apk/repositories`
 
 采用国内阿里云的源，文件内容为：
 
-https://mirrors.aliyun.com/alpine/v3.6/main/
+[https://mirrors.aliyun.com/alpine/v3.6/main/](https://mirrors.aliyun.com/alpine/v3.6/main/)
 
-https://mirrors.aliyun.com/alpine/v3.6/community/
+[https://mirrors.aliyun.com/alpine/v3.6/community/](https://mirrors.aliyun.com/alpine/v3.6/community/)
 
 如果采用中国科技大学的源，文件内容为：
 
-https://mirrors.ustc.edu.cn/alpine/v3.6/main/
+[https://mirrors.ustc.edu.cn/alpine/v3.6/main/](https://mirrors.ustc.edu.cn/alpine/v3.6/main/)
 
-https://mirrors.ustc.edu.cn/alpine/v3.6/community/
-
+[https://mirrors.ustc.edu.cn/alpine/v3.6/community/](https://mirrors.ustc.edu.cn/alpine/v3.6/community/)
 
 ## 3. 软件包管理工具apk的基本使用
+
 alpine 提供了非常好用的apk软件包管理工具，
 
 可以方便地安装、删除、更新软件。

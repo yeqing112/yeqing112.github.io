@@ -211,6 +211,7 @@ table {
   border: 2px solid darken($primary-color, 10%);
   width: 90%;
   margin: 50px auto;
+  table-layout:fixed;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
 }
 
 thead tr:first-child {
@@ -230,6 +231,11 @@ tbody tr:last-child td {border: none;}
 tbody td {
     border-bottom: 1px solid $gray-light;
     font-size: .85em;
+	width:100%;
+    word-break:keep-all;/* 不换行 */
+    white-space:nowrap;/* 不换行 */
+    overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
 }
 
 td:last-child {
@@ -554,6 +560,10 @@ hr {
 // .chat-tips i {width: 9px;height: 16px;display: inline-block;position: absolute;right: -9px;top: 80px;background-position:-88px -350px;}
 // .chat-tips img {width: 138px;height: 138px;}
 
+// ------------------------------
+// side-bar 适配移动端
+// ------------------------------
+
 @media screen and (max-width:768px){
 .side-bar {
     right: -2px;-webkit-transform: scale(.8);
@@ -720,11 +730,8 @@ ul.post-toc {
 }
 
 div#anchor-navigation-ex-navbar {
-    padding: 20px 10px;
-    position: fixed;
     top: 68px;
     right: 60px;
-    z-index: 1000;
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, .07);
     border-radius: 1px;
@@ -747,4 +754,22 @@ ul.post-toc:hover {
 
 ul.post-toc li a:hover {
 	text-decoration:underline;
+}
+
+// ------------------------------
+// TOC-目录 适配移动端
+// ------------------------------
+
+@media screen and (max-width:960px){
+div#anchor-navigation-ex-navbar {
+    right:auto;
+	left:30px;
+    }
+ul.post-toc {
+    right:auto;
+	left:-6px;
+	width:50%;
+	max-height:40%;
+	padding-top:40px;
+	}
 }
