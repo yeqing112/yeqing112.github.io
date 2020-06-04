@@ -23,10 +23,7 @@ wget http://update.aegis.aliyun.com/download/uninstall.sh \
 && ./quartz_uninstall.sh
 ```
 
-
 ## 删除残留
-
-删除残留
 
 ```bash
 pkill aliyun-service \
@@ -50,13 +47,13 @@ iptables -I INPUT -s 140.205.225.195/32 -j DROP
 iptables -I INPUT -s 140.205.225.204/32 -j DROP 
 ```
 
-## 卸载aliyun-service 
+## 卸载aliyun-service
 
 ```bash
 rm -rf /usr/sbin/aliyun*
 ```
 
-## ## 关闭cloudmonitor 
+## 关闭cloudmonitor
 
 ```bash
 chkconfig --del cloudmonitor
