@@ -47,19 +47,14 @@ iptables -I INPUT -s 140.205.225.183/32 -j DROP
 iptables -I INPUT -s 140.205.225.206/32 -j DROP
 iptables -I INPUT -s 140.205.225.205/32 -j DROP
 iptables -I INPUT -s 140.205.225.195/32 -j DROP
-iptables -I INPUT -s 140.205.225.204/32 -j DROP
+iptables -I INPUT -s 140.205.225.204/32 -j DROP 
 ```
 
-
-## 
 ## 卸载aliyun-service 
 
 ```bash
 rm -rf /usr/sbin/aliyun*
 ```
-
-卸载aliyun-service 
-rm -rf /usr/sbin/aliyun*
 
 ## ## 关闭cloudmonitor 
 
