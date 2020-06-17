@@ -796,3 +796,27 @@ a.post-tag {
     font-family: FontAwesome;
     padding-right: .5em;
 }
+
+// ------------------------------
+// post页面 tags样式
+// ------------------------------
+
+a.post-tags {
+    display: inline-block;
+    background: #f2f2f2;
+    padding: 4px .5rem;
+    margin-bottom: 10px;
+    margin-right: .5rem;
+    border-radius: 4px;
+    font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    font-size: .8em;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    color: #555;
+    transition: all 0.1s ease-in-out;
+}
+a.post-tags:before {
+    content: "\f02b";
+    font-family: FontAwesome;
+    padding-right: .5em;
+}
