@@ -10,6 +10,9 @@ tags:
 - mount
 ---
 
+* toc
+{:toc}
+
 mount 命令用来挂载文件系统。其基本命令格式为：
 **mount -t type [-o options] device dir**
 **device**：指定要挂载的设备，比如磁盘、光驱等。
