@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux入门学习笔记
-date: 2020-06-20 10:40
+date: 2020-06-20 10:36
 author: yeqing
 comments: true
 category:
