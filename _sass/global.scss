@@ -209,7 +209,7 @@ table {
   line-height: 40px;
   border-spacing: 0;
   border: 2px solid darken($primary-color, 10%);
-  width: 90%;
+  width: 100%;
   margin: 50px auto;
   table-layout:fixed;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
 }
@@ -231,7 +231,7 @@ tbody tr:last-child td {border: none;}
 tbody td {
     border-bottom: 1px solid $gray-light;
     font-size: .85em;
-	width:100%;
+	width:auto%;
     word-break:keep-all;/* 不换行 */
     white-space:nowrap;/* 不换行 */
     overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
