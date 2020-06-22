@@ -140,8 +140,9 @@ blockquote {
 
 code.highlighter-rouge {
   border: 0;
-  color: #3ea4c6;
+  color: #c7254e;
   margin: 0 2px;
+  background-color: #f9f2f4;
 }
 
 // ------------------------------
@@ -171,11 +172,11 @@ ul {
 }
 
 code {
-  padding: .1em .4em;
+  padding: 2px 4px;
   background: lighten($secondary-color, 32%);
   border: 1px solid lighten($secondary-color, 25%);
   border-radius: $border-radius;
-  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-family: Source Code Pro,DejaVu Sans Mono,Ubuntu Mono,Anonymous Pro,Droid Sans Mono,Menlo,Monaco,Consolas,Inconsolata,Courier,monospace,PingFang SC,Microsoft YaHei,sans-serif;
   font-size: .9em;
   vertical-align: bottom;
   word-wrap: break-word;
