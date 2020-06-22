@@ -211,7 +211,7 @@ table {
   border: 2px solid darken($primary-color, 10%);
   width: 100%;
   margin: 50px auto;
-  table-layout:fixed;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
+  table-layout:auto;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */
 }
 
 thead tr:first-child {
