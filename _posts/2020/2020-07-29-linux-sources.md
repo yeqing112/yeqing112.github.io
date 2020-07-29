@@ -10,6 +10,8 @@ tags:
 - linux
 ---
 
+[toc]
+
 ## Debian
 
 ### 阿里云
