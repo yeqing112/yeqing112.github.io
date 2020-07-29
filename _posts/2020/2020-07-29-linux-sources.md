@@ -10,7 +10,8 @@ tags:
 - linux
 ---
 
-[toc]
+* toc
+{:toc}
 
 ## Debian
 
