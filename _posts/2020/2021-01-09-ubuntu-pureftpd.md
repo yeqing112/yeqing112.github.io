@@ -75,7 +75,7 @@ ls: 登录失败: 530 Login authentication failed
 解决办法很简单，用软链接去创建这个文件即可：
 
 ```bash
-ln -s /etc/pure-ftpd/conf/PureDB 60puredb
+ln -s /etc/pure-ftpd/conf/PureDB /etc/pure-ftpd/auth/60puredb
 ```
 
 重启Pure-ftpd
