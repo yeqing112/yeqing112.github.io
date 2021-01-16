@@ -39,6 +39,12 @@ groupadd -g 8888 pure-ftpd
 useradd -u 8888 -g 8888 -s /bin/false pure-ftpd -d /ftp
 ```
 
+修改ftp目录所属用户和用户组
+
+```bash
+chown pure-ftpd:pure-ftpd /ftp
+```
+
 新建Pure-ftpd虚拟子账户
 
 ```bash
