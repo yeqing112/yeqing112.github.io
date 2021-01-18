@@ -33,7 +33,7 @@ mkdir /nfsdir && chmod -R 777 /nfsdir/
 修改exports
 ```shell
 cat > /etc/exports <<-EOF
-/nfsdir  *(rw,all_squash,insecure)
+/nfsdir  *(rw,no_subtree_check,root_squash,no_all_squash,insecure)
 EOF
 ```
 ```bash
@@ -61,7 +61,7 @@ EOF
 apt-get install -y nfs-kernel-server nfs-common \
 && mkdir /nfsdir \
 && chmod -R 777 /nfsdir/ \
-&& echo "/nfsdir  *(rw,all_squash,insecure)" > /etc/exports \
+&& echo "/nfsdir  192.168.43.0/24(rw,no_subtree_check,root_squash,no_all_squash,insecure)" > /etc/exports \
 && /etc/init.d/nfs-kernel-server restart
 ```
 
