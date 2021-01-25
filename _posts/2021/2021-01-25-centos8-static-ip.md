@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CentOS设置固定IP的方法
+title: CentOS8设置固定IP的方法
 date: 2021-01-25 10:01
 author: yeqing
 comments: true
