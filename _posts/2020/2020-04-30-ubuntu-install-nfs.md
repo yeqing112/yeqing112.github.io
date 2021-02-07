@@ -91,3 +91,24 @@ mount nfs-server-ip:/nfsdir /mnt
 vim /etc/fstab
 nfs-server-ip:/nfsdir /mnt       nfs    rw    0     0
 ```
+
+## 卸载挂载
+
+### 一、nfs远程挂载
+
+1.首先确定服务端（实体挂载节点）的IP
+
+2.通过cat /etc/hosts 查看服务端的server name
+
+3.mount -t nfs servername:/挂载文件夹 /服务端挂载文件夹
+
+### 二、nfs客户端卸载
+
+1.umount /挂载文件夹 
+
+2.如果umount卸载显示 device busy，则通过下列方式卸载
+
+3.（1）fuser -km /挂载文件夹
+
+　（2）umount /挂载文件夹
+
