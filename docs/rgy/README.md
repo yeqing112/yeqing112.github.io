@@ -361,11 +361,298 @@ curl -O https://www.urlos.com/iu && sh iu
 
 ### 3.1 镜像打包
 
+我们以WordPress为例制作Docker镜像。
+
+如果还没有Docker镜像仓库账户的，先到 <a href="https://help.aliyun.com/document_detail/60997.html#title-pge-3y6-1a5" target="_blank">阿里云容器镜像仓库</a>注册一个账户，创建好名为**wordpress**的仓库，再进行下面的教程。
+
+
+
+https://cn.wordpress.org/latest-zh_CN.tar.gz
+
+#### 3.1.1 使用URLOS制作WordPress镜像
+
+1、下载WordPress压缩包 [https://cn.wordpress.org/download/。](https://cn.wordpress.org/download/。)
+
+默认下载的是zip压缩包，我们选择下载tar.gz压缩包。下载完成后将压缩包名改名为：**wordpress.tar.gz**。
+
+<br>
+
+2、使用sftp工具登录安装有URLOS的云主机([URLOS的安装请参考官方教程](#第2步：安装URLOS))，wordpress.tar.gz到目录/tmp。
+
+<br>
+
+3、因为运行WordPress的PHP版本只要5.2 或更高版本，所以我们直接选择PHP7.4，执行以下命令运行PHP7.4的容器：
+
+```sh
+docker run -itd --name=wordpress registry.cn-shanghai.aliyuncs.com/urlos/php-fpm:7.4-nginx-ubuntu
+# 运行php7.4的容器，其中wordpress为容器的名字，可以自定义
+```
+
+`注：创建容器有失败的情况，如果是端口冲突，换一个端口；如果是容器名字冲突，换一个容器的名字或者删除已存在的容器。查看所有容器：“docker ps -a”，删除容器：执行命令“docker rm -f 容器id”。`
+
+<br>
+
+4、将压缩包复制到容器里并进入容器
+
+```sh
+docker cp /tmp/wordpress.tar.gz wordpress:/tmp # 复制压缩包到名为wordpress的容器里
+```
+
+<br>
+
+5、将容器保存为镜像
+
+```sh
+docker commit wordpress registry.cn-shanghai.aliyuncs.com/urlos4/wordpress:5.7.0 # 保存名为wordpress的容器为镜像
+```
+
+`注：这里的urlos4为命名空间，registry.cn-shanghai.aliyuncs.com为阿里仓库线路的域名，请根据自己实际的替换`
+
+<br>
+
+6、上传镜像
+
+```sh
+docker login --username=你的用户名 registry.cn-shanghai.aliyuncs.com # 登录到阿里云容器镜像仓库
+docker push registry.cn-shanghai.aliyuncs.com/urlos4/wordpress:5.7.0 # 上传到仓库
+```
+
+`注：这里的urlos4为命名空间，registry.cn-shanghai.aliyuncs.com为阿里仓库线路的域名，请根据自己实际的替换`
+
+<br>
+
+#### 3.1.2 添加镜像到URLOS
+
+1、选择**镜像管理** ，点击页面右上角**添加**按钮： 
+
+![image-20201222170139920](images/image-20201222170139920-1616063268230.png)
+
+<br>
+
+2、添加镜像，填写如下：
+
+![image-20210318124841520](images/image-20210318124841520-1616063268231.png)
+
+**镜像名称**：urlos4/wordpress:5.7.0，**镜像地址**：registry.cn-shanghai.aliyuncs.com/urlos4/wordpress:5.7.0
+`注：这里的urlos4为命名空间，registry.cn-shanghai.aliyuncs.com为阿里仓库线路的域名，请根据自己实际的替换`
+
+<br>
+
+3、登录帐户
+![image-20200408152153893](images/image-20200408152153893-1616063268231.png)
+
+配置填写后，点击提交，保存到URLOS。
+
+<br>
+
 ### 3.2 应用制作
 
-### 3.3 应用审核
+#### 3.2.1 基于添加的镜像创建WordPress应用
 
-### 3.4 添加商品
+1、我们先复制一个应用，然后通过修改复制的应用成为WordPress。因为我们制作的WordPress的镜像是基于PHP7.4，所以找一个PHP7.4的网站环境应用进行复制。进入**应用开发**页面，搜索"**php7.4**"，找到需要复制的应用，选择**更多**->**复制应用** ，如下图：
+![image-20210318141932140](images/image-20210318141932140-1616063268232.png)
+
+<br>
+
+2、在**基本信息**选项卡，修改**应用别名**等信息，并选择我们刚才添加的**镜像**
+![image-20210318142813556](images/image-20210318142813556-1616063268232.png)
+
+<br>
+
+3、切换到**标签**选项卡，**标签**信息填写如下：
+
+![image-20210318143224761](images/image-20210318143224761-1616063268232.png)
+
+```
+cate1__内容管理
+type__website
+cms    wordpress    内容管理    博客系统    建站系统
+```
+
+
+
+<br>
+
+4、切换到**扩展设置**选项卡，**服务别名**填写如下：
+
+![image-20210318143742804](images/image-20210318143742804-1616063268232.png)
+
+<br>
+
+5、切换到**脚本设置**选项卡，添加安装脚本如下：
+![image-20210318160035159](images/image-20210318160035159-1616063268232.png)
+
+安装脚本：
+
+```sh
+test -d /data/www || mkdir -p /data/www
+if [ $(find /data/www/ -name "*.php" -type f|wc -l) -lt 5 ];  then
+    cd /tmp
+    tar -xf wordpress.tar.gz
+    mv -f wordpress/* /data/www/
+    chmod -R 777 /data/www
+    chmod -R 755 /data/www/wp-content
+    chown -R nobody:nogroup /data/www
+    cd /data/www
+    #生成随机字符
+    if [ ! -f wp-config-ext.php ]; then
+      echo "<?php" > wp-config-ext.php
+      echo "define( 'AUTH_KEY',	   '$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+      echo "define( 'AUTH_KEY',	   '$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+      echo "define( 'SECURE_AUTH_KEY',  '$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+      echo "define( 'LOGGED_IN_KEY',  '$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+      echo "define( 'NONCE_KEY',	'$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+      echo "define( 'AUTH_SALT',	'$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+      echo "define( 'SECURE_AUTH_SALT', '$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+      echo "define( 'LOGGED_IN_SALT',   '$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+      echo "define( 'NONCE_SALT',	'$(head -2 /dev/urandom|base64|head -c 64)' );" >> wp-config-ext.php
+    fi
+fi
+```
+
+6、切换到**使用帮助**选项卡，修改**使用帮助**如下：
+
+![image-20210318144908649](images/image-20210318144908649-1616063268232.png)
+
+按照上面的配置填写后，点击提交，保存应用。
+
+7、添加WordPress配置文件模板提交保存应用后，会自动返回应用列表。找到我们刚刚保存的WordPress，点击**更多** -> **管理模板**
+![image-20210318145640471](images/image-20210318145640471-1616063268233.png)
+
+点击**添加模板**
+
+![image-20210318145758690](images/image-20210318145758690-1616063268233.png)
+
+模板**基本信息**填写如下：
+
+![image-20210318145913460](images/image-20210318145913460-1616063268233.png)
+
+切换到**模板内容**选项卡，填写如下：
+
+![image-20210318150017961](images/image-20210318150017961-1616063268233.png)
+
+模板内容：
+
+```php
+<?php
+/**
+ * The base configuration for WordPress
+ *
+ * The wp-config.php creation script uses this file during the
+ * installation. You don't have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * MySQL settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://wordpress.org/support/article/editing-wp-config-php/
+ *
+ * @package WordPress
+ */
+
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('WP_CACHE', true);
+define( 'WPCACHEHOME', '/data/www/wp-content/plugins/wp-super-cache/' );
+define( 'DB_NAME', '{w:dbName:w}' );
+
+/** MySQL database username */
+define( 'DB_USER', '{w:dbUser:w}' );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', '{w:dbPassword:w}' );
+
+/** MySQL hostname */
+define( 'DB_HOST', '{w:dbHost:w}' );
+
+/** Database Charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8mb4' );
+
+/** The Database Collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
+
+/**#@+
+ * Authentication Unique Keys and Salts.
+ *
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
+require_once __DIR__ . '/wp-config-ext.php';
+
+/**#@-*/
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each
+ * a unique prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix = 'wp_';
+
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ *
+ * For information on other constants that can be used for debugging,
+ * visit the documentation.
+ *
+ * @link https://wordpress.org/support/article/debugging-in-wordpress/
+ */
+define( 'WP_DEBUG', false );
+
+/* That's all, stop editing! Happy publishing. */
+
+/** Absolute path to the WordPress directory. */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', __DIR__ . '/' );
+}
+
+/** Sets up WordPress vars and included files. */
+require_once ABSPATH . 'wp-settings.php';
+
+$_SERVER['HTTPS'] = '{w:httpsSwitch:w}';
+if ('{w:letsencryptSwitch:w}' == '1') {
+	$_SERVER['HTTPS'] = 'on';
+}
+define('FORCE_SSL_LOGIN', '{w:httpsSwitch:w}' == 'on' || '{w:letsencryptSwitch:w}' == '1');
+define('FORCE_SSL_ADMIN', '{w:httpsSwitch:w}' == 'on'  || '{w:letsencryptSwitch:w}' == '1');
+```
+
+点击提交保存模板，这样WordPress应用已经创建完成。
+
+<br>
+
+### 3.3 添加商品
+
+登录软骨鱼SaaS后台，在左侧菜单找到**商品** -> **软件应用**，点击右上角**添加**按钮
+
+![image-20210318161308033](images/image-20210318161308033-1616063268233.png)
+
+商品基本信息填写如下：
+
+其中应用ID，从上一步**应用制作**中的**应用开发**列表查看获得
+
+![image-20210318170500917](images/image-20210318170500917-1616063268233.png)
+
+![image-20210318172950848](images/image-20210318172950848-1616063268234.png)
+
+填写完成后，提交保存商品。
+
+![image-20210318173057414](images/image-20210318173057414-1616063268234.png)
+
+<br>
+
+----
 
 ----
 
