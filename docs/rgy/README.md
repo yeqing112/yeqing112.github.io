@@ -99,7 +99,7 @@ curl -O https://www.urlos.com/iu && sh iu
 >
 > `curl -O https://www.urlos.com/iu && sh iu 1.3.0.3-beta` 　[查看所有Beta版本](https://hub.docker.com/r/urlos/urlos/tags?page=1&name=beta&ordering=last_updated)
 >
-> ３、单机模式转集群模式，请参见 [单机模式转集群模式](../tips/change-cluster.md)
+> ３、单机模式转集群模式，请参见 [单机模式转集群模式](https://www.urlos.com/urlos-document/tips/change-cluster.html)
 
 **3、选择服务器所在区域：**
 
@@ -123,12 +123,12 @@ curl -O https://www.urlos.com/iu && sh iu
 
 ![image-20200718155712501](images/image-20200718155712501.png)
 
-如安装完成后忘记密码，请参见 [初始化URLOS密码](../problem/problem002.md)
+如安装完成后忘记密码，请参见 [初始化URLOS密码](https://www.urlos.com/urlos-document/problem/problem002.html)
 
 > [!TIP]
 >
 > 1. URLOS同时支持HTTPS和HTTP协议进行访问，但我们强烈推荐你使用HTTPS协议，因为HTTP协议非常不安全，很容易被抓包从而导致密码泄露！
-> 2. 付费版本需绑定授权密钥才能正常使用，详情请参见 [授权码绑定](../install/code-binding.md)。
+> 2. 付费版本需绑定授权密钥才能正常使用，详情请参见 [授权码绑定](https://www.urlos.com/urlos-document/install/code-binding.html)。
 
 ##### 第2步：添加集群
 
@@ -244,7 +244,7 @@ curl -O https://www.urlos.com/iu && sh iu
 >
 > `curl -O https://www.urlos.com/iu && sh iu 1.3.0.3-beta` 　[查看所有Beta版本](https://hub.docker.com/r/urlos/urlos/tags?page=1&name=beta&ordering=last_updated)
 >
-> ３、单机模式转集群模式，请参见 [单机模式转集群模式](../tips/change-cluster.md)
+> ３、单机模式转集群模式，请参见 [单机模式转集群模式](https://www.urlos.com/urlos-document/tips/change-cluster.html)
 
 **3、选择服务器所在区域：**
 
@@ -268,12 +268,12 @@ curl -O https://www.urlos.com/iu && sh iu
 
 ![image-20200718155712501](images/image-20200718155712501.png)
 
-如安装完成后忘记密码，请参见 [初始化URLOS密码](../problem/problem002.md)
+如安装完成后忘记密码，请参见 [初始化URLOS密码](https://www.urlos.com/urlos-document/problem/problem002.html)
 
 > [!TIP]
 >
 > 1. URLOS同时支持HTTPS和HTTP协议进行访问，但我们强烈推荐你使用HTTPS协议，因为HTTP协议非常不安全，很容易被抓包从而导致密码泄露！
-> 2. 付费版本需绑定授权密钥才能正常使用，详情请参见 [授权码绑定](../install/code-binding.md)。
+> 2. 付费版本需绑定授权密钥才能正常使用，详情请参见 [授权码绑定](https://www.urlos.com/urlos-document/install/code-binding.html)。
 
 ##### 第3步：添加集群并挂载NFS
 
