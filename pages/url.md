@@ -62,6 +62,7 @@ permalink: /url/
     <div class="item">
         <h2>高清图库</h2>
         <ul class="xoxo blogroll">
+			<li><a href="https://xframe.io/" title="收录亚洲面孔的日本免费图库。" target="_blank">xFrame</a><br>收录亚洲面孔的日本免费图库。</li>
             <li><a href="https://wallhaven.cc/" title="免费商用高清大图。" target="_blank">WallHaven</a><br>免费商用高清大图。</li>
             <li><a href="https://unsplash.com/" title="每日更新十张图，质量很好。主打风景图，可以戳图找原作者。" target="_blank">Unsplash</a><br>每日更新十张图，质量很好。主打风景图，可以戳图找原作者。</li>
             <li><a href="https://www.pakutaso.com/" title="日本的设计师们都差不多知道啦，有很多日系素材和美图" target="_blank">PAKUTASO</a><br>日本的设计师们都差不多知道啦，有很多日系素材和美图</li>
