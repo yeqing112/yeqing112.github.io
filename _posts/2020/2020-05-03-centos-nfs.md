@@ -74,7 +74,7 @@ RQUOTAD_PORT=4004
 /var/nfs    192.168.1.0/24(rw)
 # exportfs -r　　#重载exports配置
 # exportfs -v　　#查看共享参数
-/var/nfs      	192.168.1.0/24(rw,sync,wdelay,hide,no_subtree_check,sec=sys,secure,root_squash,no_all_squash)
+/var/nfs      	192.168.1.0/24(rw,no_subtree_check,no_root_squash,no_all_squash,insecure)
 ```
 > exportfs参数说明
 > -a 全部挂载或卸载 /etc/exports中的内容
